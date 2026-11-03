@@ -11,6 +11,8 @@ import { CONFIG, formatPrice } from '../../data/config.js';
 import { renderProductCard } from '../components/productCard.js';
 
 let activeCategory = 'todas';
+let activeSubcategory = '';
+let activeGoldType = '';
 let activeTag = '';
 let minPrice = null;
 let maxPrice = null;
@@ -18,8 +20,33 @@ let searchQuery = '';
 let sortBy = 'popularidad';
 
 /**
+ * Mapeo de compatibilidad para URLs o categorías legadas
+ */
+const LEGACY_CATEGORY_MAP = {
+  'manillas': 'manillas-tejidas',
+  'aretes': 'aretes-tradicionales',
+  'sets': 'joyeria',
+  'accesorios': 'joyeria',
+};
+
+/**
+ * Comprueba coincidencia de categoría soportando compatibilidad temporal con productos demo
+ */
+function matchCategory(productCategory, targetCategoryId) {
+  if (targetCategoryId === 'todas') return true;
+  if (productCategory === targetCategoryId) return true;
+  
+  // Compatibilidad temporal para productos demo actuales
+  if (targetCategoryId === 'manillas-tejidas' && productCategory === 'manillas') return true;
+  if (targetCategoryId === 'aretes-tradicionales' && productCategory === 'aretes') return true;
+  if (targetCategoryId === 'joyeria' && (productCategory === 'sets' || productCategory === 'accesorios')) return true;
+  
+  return false;
+}
+
+/**
  * Render the Shop view into a container or main element.
- * @param {Object} params - Route params, e.g. { category: 'manillas' }
+ * @param {Object} params - Route params, e.g. { category: 'pulseras' }
  * @param {HTMLElement} container
  */
 export function renderShopView(params = {}, container) {
@@ -27,12 +54,25 @@ export function renderShopView(params = {}, container) {
 
   // Handle category param from URL or default
   if (params && params.category) {
-    const catParam = params.category.toLowerCase();
+    let catParam = params.category.toLowerCase();
+    
+    // Mapeo de rutas legadas si aplican
+    if (LEGACY_CATEGORY_MAP[catParam]) {
+      catParam = LEGACY_CATEGORY_MAP[catParam];
+    }
+
     if (catParam === 'ofertas' || catParam === 'nuevos' || catParam === 'mas-vendidos') {
       activeCategory = 'todas';
       activeTag = catParam === 'nuevos' ? 'nuevo' : (catParam === 'mas-vendidos' ? 'mas-vendido' : 'oferta');
     } else {
-      activeCategory = catParam;
+      // Verificar si la categoría existe en CATEGORIES
+      const exists = CATEGORIES.some(c => c.id === catParam);
+      if (exists) {
+        activeCategory = catParam;
+      } else {
+        // Ruta inválida o no reconocida: caer suavemente a 'todas' sin dejar la tienda en blanco
+        activeCategory = 'todas';
+      }
       activeTag = '';
     }
   } else {
@@ -43,6 +83,9 @@ export function renderShopView(params = {}, container) {
     }
   }
 
+  const mainCategories = CATEGORIES.filter(c => !c.isComplementary);
+  const complementaryCategories = CATEGORIES.filter(c => c.isComplementary);
+
   container.innerHTML = `
     <div class="header-spacer"></div>
     <div class="shop section section--ivory">
@@ -50,7 +93,10 @@ export function renderShopView(params = {}, container) {
         <!-- Top banner / header -->
         <div class="section__header" style="margin-bottom: 24px;">
           <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);">Catálogo de Joyería</h1>
-          <p class="section__subtitle">Descubre piezas finamente elaboradas en oro laminado y acero inoxidable premium</p>
+          <p class="section__subtitle">Descubre piezas finamente elaboradas en orfebrería y tradición nacional</p>
+          <div class="shop__notice" style="background: rgba(212, 175, 55, 0.08); border-left: 3px solid #c5a059; padding: 10px 18px; margin: 18px auto 0 auto; max-width: 760px; border-radius: 4px; text-align: center; font-size: 0.9rem; color: #444; line-height: 1.5;">
+            <strong style="color: #111;">Aviso:</strong> Catálogo de referencia. Precios, materiales y disponibilidad sujetos a confirmación por WhatsApp.
+          </div>
         </div>
 
         <!-- Mobile filter toggle button -->
@@ -72,16 +118,16 @@ export function renderShopView(params = {}, container) {
                   type="text"
                   id="shop-search-input"
                   class="shop__price-input"
-                  placeholder="Ej: eslabón, aretes, circón..."
+                  placeholder="Ej: eslabón, topitos, balines..."
                   value="${escapeHTML(searchQuery)}"
                   style="width: 100%; padding: 10px 12px; margin-top: 6px;"
                 />
               </div>
 
-              <!-- Categories -->
+              <!-- Categorías Principales (9) -->
               <div class="shop__filter-group">
                 <div class="shop__filter-title" id="filter-title-categories">
-                  <span>Categorías</span>
+                  <span>Categorías Principales</span>
                 </div>
                 <div class="shop__filter-options">
                   <label class="shop__filter-option">
@@ -94,8 +140,8 @@ export function renderShopView(params = {}, container) {
                     />
                     <span>Todas las joyas (${PRODUCTS.length})</span>
                   </label>
-                  ${CATEGORIES.map(cat => {
-                    const count = PRODUCTS.filter(p => p.category === cat.id).length;
+                  ${mainCategories.map(cat => {
+                    const count = PRODUCTS.filter(p => matchCategory(p.category, cat.id)).length;
                     return `
                       <label class="shop__filter-option">
                         <input
@@ -109,6 +155,118 @@ export function renderShopView(params = {}, container) {
                       </label>
                     `;
                   }).join('')}
+                </div>
+
+                <!-- Sección Complementaria (Tobilleras) -->
+                ${complementaryCategories.length > 0 ? `
+                  <div class="shop__filter-title" style="margin-top: 14px; border-top: 1px dashed var(--beige); padding-top: 10px;">
+                    <span style="color: var(--gold-dark); font-size: 0.85rem;">Sección Complementaria</span>
+                  </div>
+                  <div class="shop__filter-options">
+                    ${complementaryCategories.map(cat => {
+                      const count = PRODUCTS.filter(p => matchCategory(p.category, cat.id)).length;
+                      return `
+                        <label class="shop__filter-option">
+                          <input
+                            type="radio"
+                            name="shop-category"
+                            value="${cat.id}"
+                            class="shop__filter-checkbox"
+                            ${activeCategory === cat.id ? 'checked' : ''}
+                          />
+                          <span>${cat.name} (${count})</span>
+                        </label>
+                      `;
+                    }).join('')}
+                  </div>
+                ` : ''}
+              </div>
+
+              <!-- Filtro Secundario: Subcategorías de Pulseras -->
+              <div class="shop__filter-group">
+                <div class="shop__filter-title">
+                  <span>Subcategoría (Pulseras)</span>
+                </div>
+                <div class="shop__filter-options">
+                  <label class="shop__filter-option">
+                    <input
+                      type="radio"
+                      name="shop-subcategory"
+                      value=""
+                      class="shop__filter-checkbox"
+                      ${activeSubcategory === '' ? 'checked' : ''}
+                    />
+                    <span>Todas las pulseras</span>
+                  </label>
+                  <label class="shop__filter-option">
+                    <input
+                      type="radio"
+                      name="shop-subcategory"
+                      value="balines"
+                      class="shop__filter-checkbox"
+                      ${activeSubcategory === 'balines' ? 'checked' : ''}
+                    />
+                    <span>Balines</span>
+                  </label>
+                  <label class="shop__filter-option">
+                    <input
+                      type="radio"
+                      name="shop-subcategory"
+                      value="diamantadas"
+                      class="shop__filter-checkbox"
+                      ${activeSubcategory === 'diamantadas' ? 'checked' : ''}
+                    />
+                    <span>Diamantadas</span>
+                  </label>
+                  <label class="shop__filter-option">
+                    <input
+                      type="radio"
+                      name="shop-subcategory"
+                      value="lisas"
+                      class="shop__filter-checkbox"
+                      ${activeSubcategory === 'lisas' ? 'checked' : ''}
+                    />
+                    <span>Lisas</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Filtro Secundario: Tipo de Oro -->
+              <div class="shop__filter-group">
+                <div class="shop__filter-title">
+                  <span>Tipo de Oro (Cadenas & Joyería)</span>
+                </div>
+                <div class="shop__filter-options">
+                  <label class="shop__filter-option">
+                    <input
+                      type="radio"
+                      name="shop-goldtype"
+                      value=""
+                      class="shop__filter-checkbox"
+                      ${activeGoldType === '' ? 'checked' : ''}
+                    />
+                    <span>Todo tipo de oro</span>
+                  </label>
+                  <label class="shop__filter-option">
+                    <input
+                      type="radio"
+                      name="shop-goldtype"
+                      value="nacional"
+                      class="shop__filter-checkbox"
+                      ${activeGoldType === 'nacional' ? 'checked' : ''}
+                    />
+                    <span>Oro Nacional</span>
+                  </label>
+                  <label class="shop__filter-option">
+                    <input
+                      type="radio"
+                      name="shop-goldtype"
+                      value="italiano"
+                      class="shop__filter-checkbox"
+                      ${activeGoldType === 'italiano' ? 'checked' : ''}
+                    />
+                    <span>Oro Italiano</span>
+                  </label>
                 </div>
               </div>
 
@@ -235,14 +393,28 @@ export function renderShopView(params = {}, container) {
  */
 function getFilteredProducts() {
   return PRODUCTS.filter(p => {
-    // Category
-    if (activeCategory !== 'todas' && p.category !== activeCategory) {
+    // Category (con compatibilidad temporal para productos demo)
+    if (!matchCategory(p.category, activeCategory)) {
+      return false;
+    }
+
+    // Subcategory (pulseras)
+    if (activeSubcategory && p.subcategory !== activeSubcategory) {
+      return false;
+    }
+
+    // Gold type (nacional / italiano)
+    if (activeGoldType && p.goldType !== activeGoldType) {
       return false;
     }
 
     // Tag
-    if (activeTag && (!p.tags || !p.tags.includes(activeTag))) {
-      return false;
+    if (activeTag) {
+      if (activeTag === 'oferta') {
+        if ((!p.tags || !p.tags.includes('oferta')) && p.oldPrice == null) return false;
+      } else if (!p.tags || !p.tags.includes(activeTag)) {
+        return false;
+      }
     }
 
     // Search query
@@ -251,7 +423,9 @@ function getFilteredProducts() {
       const name = p.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
       const desc = p.description.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
       const mat = (p.material || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-      if (!name.includes(q) && !desc.includes(q) && !mat.includes(q)) {
+      const sub = (p.subcategory || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      const gold = (p.goldType || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      if (!name.includes(q) && !desc.includes(q) && !mat.includes(q) && !sub.includes(q) && !gold.includes(q)) {
         return false;
       }
     }
@@ -299,6 +473,14 @@ function applyFiltersAndRender() {
     if (activeCategory !== 'todas') {
       const catObj = CATEGORIES.find(c => c.id === activeCategory);
       chips.push({ label: `Categoría: ${catObj ? catObj.name : activeCategory}`, clear: () => { activeCategory = 'todas'; syncCategoryRadio(); } });
+    }
+    if (activeSubcategory) {
+      const subLabels = { 'balines': 'Balines', 'diamantadas': 'Diamantadas', 'lisas': 'Lisas' };
+      chips.push({ label: `Subcategoría: ${subLabels[activeSubcategory] || activeSubcategory}`, clear: () => { activeSubcategory = ''; syncSubcategoryRadio(); } });
+    }
+    if (activeGoldType) {
+      const goldLabels = { 'nacional': 'Oro Nacional', 'italiano': 'Oro Italiano' };
+      chips.push({ label: `Tipo: ${goldLabels[activeGoldType] || activeGoldType}`, clear: () => { activeGoldType = ''; syncGoldTypeRadio(); } });
     }
     if (activeTag) {
       const tagLabels = { 'nuevo': 'Novedades', 'mas-vendido': 'Más Vendidos', 'oferta': 'En Oferta' };
@@ -369,6 +551,20 @@ function syncCategoryRadio() {
   });
 }
 
+function syncSubcategoryRadio() {
+  const radios = document.querySelectorAll('input[name="shop-subcategory"]');
+  radios.forEach(r => {
+    r.checked = r.value === activeSubcategory;
+  });
+}
+
+function syncGoldTypeRadio() {
+  const radios = document.querySelectorAll('input[name="shop-goldtype"]');
+  radios.forEach(r => {
+    r.checked = r.value === activeGoldType;
+  });
+}
+
 function syncTagRadio() {
   const radios = document.querySelectorAll('input[name="shop-tag"]');
   radios.forEach(r => {
@@ -378,6 +574,8 @@ function syncTagRadio() {
 
 function clearAllFilters() {
   activeCategory = 'todas';
+  activeSubcategory = '';
+  activeGoldType = '';
   activeTag = '';
   minPrice = null;
   maxPrice = null;
@@ -385,6 +583,8 @@ function clearAllFilters() {
   sortBy = 'popularidad';
 
   syncCategoryRadio();
+  syncSubcategoryRadio();
+  syncGoldTypeRadio();
   syncTagRadio();
 
   const searchInp = document.getElementById('shop-search-input');
@@ -416,6 +616,24 @@ function bindShopEvents(container) {
   catRadios.forEach(radio => {
     radio.addEventListener('change', () => {
       activeCategory = radio.value;
+      applyFiltersAndRender();
+    });
+  });
+
+  // Subcategory radios
+  const subcatRadios = document.querySelectorAll('input[name="shop-subcategory"]');
+  subcatRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      activeSubcategory = radio.value;
+      applyFiltersAndRender();
+    });
+  });
+
+  // Gold type radios
+  const goldRadios = document.querySelectorAll('input[name="shop-goldtype"]');
+  goldRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      activeGoldType = radio.value;
       applyFiltersAndRender();
     });
   });

@@ -10,8 +10,8 @@ export function renderHero() {
     <section class="hero" id="hero">
       <div class="hero__bg">
         <img
-          src="https://images.unsplash.com/photo-1515562141589-67f0d569b6b3?w=1600&h=900&fit=crop&q=80"
-          alt="Joyería de lujo"
+          src="https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1600&h=900&fit=crop&q=80"
+          alt="Joyería de oro artesanal colombiana"
           class="hero__bg-img"
           loading="eager"
           onerror="this.style.display='none'"

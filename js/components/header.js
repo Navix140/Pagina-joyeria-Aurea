@@ -28,11 +28,16 @@ const ICONS = {
 const NAV_LINKS = [
   { label: 'Inicio', href: '#/' },
   { label: 'Tienda', href: '#/tienda' },
-  { label: 'Manillas', href: '#/tienda/manillas' },
+  { label: 'Manillas', href: '#/tienda/manillas-tejidas' },
+  { label: 'Pulseras', href: '#/tienda/pulseras' },
+  { label: 'Pulsos', href: '#/tienda/pulsos' },
+  { label: 'Aretes', href: '#/tienda/aretes-tradicionales' },
+  { label: 'Topitos', href: '#/tienda/topitos' },
   { label: 'Cadenas', href: '#/tienda/cadenas' },
+  { label: 'Joyería', href: '#/tienda/joyeria' },
+  { label: 'Dijes', href: '#/tienda/dijes' },
   { label: 'Anillos', href: '#/tienda/anillos' },
-  { label: 'Aretes', href: '#/tienda/aretes' },
-  { label: 'Accesorios', href: '#/tienda/accesorios' },
+  { label: 'Tobilleras', href: '#/tienda/tobilleras' },
   { label: 'Ofertas', href: '#/tienda/ofertas' },
 ];
 
@@ -58,7 +63,7 @@ export function renderHeader() {
         </a>
 
         <!-- Desktop navigation -->
-        <nav class="header__nav" aria-label="Navegación principal">
+        <nav class="header__nav" aria-label="Navegación principal" style="gap: clamp(8px, 1.2vw, 18px);">
           ${NAV_LINKS.map(link => `
             <a href="${link.href}"
                class="header__nav-link${currentHash === link.href ? ' header__nav-link--active' : ''}"

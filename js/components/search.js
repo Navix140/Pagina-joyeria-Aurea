@@ -26,7 +26,13 @@ function normalize(str) {
 
 function getCategoryName(catId) {
   const cat = CATEGORIES.find(c => c.id === catId);
-  return cat ? cat.name : catId;
+  if (cat) return cat.name;
+  // Compatibilidad con nombres legados para productos demo
+  if (catId === 'manillas') return 'Manillas Tejidas';
+  if (catId === 'aretes') return 'Aretes Tradicionales';
+  if (catId === 'sets') return 'Joyería';
+  if (catId === 'accesorios') return 'Joyería';
+  return catId;
 }
 
 function ensureOverlay() {
@@ -43,7 +49,7 @@ function ensureOverlay() {
           type="text"
           class="search-overlay__input"
           id="search-input"
-          placeholder="Buscar manillas, cadenas, anillos, aretes..."
+          placeholder="Buscar manillas tejidas, pulseras, cadenas, topitos, dijes..."
           autocomplete="off"
           aria-label="Buscar en la tienda"
         />
@@ -106,7 +112,9 @@ function updateResults(query) {
     return normalize(p.name).includes(normalizedQuery)
       || normalize(getCategoryName(p.category)).includes(normalizedQuery)
       || normalize(p.description).includes(normalizedQuery)
-      || normalize(p.material || '').includes(normalizedQuery);
+      || normalize(p.material || '').includes(normalizedQuery)
+      || (p.subcategory && normalize(p.subcategory).includes(normalizedQuery))
+      || (p.goldType && normalize(p.goldType).includes(normalizedQuery));
   });
 
   if (matches.length === 0) {
@@ -114,7 +122,7 @@ function updateResults(query) {
       <div class="search-no-results">
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
         <p>No se encontraron piezas para "<strong>${escapeHTML(query)}</strong>"</p>
-        <p style="font-size: 0.85rem; color: var(--gray-text);">Prueba buscando: manilla, cadena, oro, anillo, aretes o set</p>
+        <p style="font-size: 0.85rem; color: var(--gray-text);">Prueba buscando: manillas tejidas, pulseras, pulsos, cadenas, topitos, dijes, anillos o tobilleras</p>
       </div>
     `;
     return;

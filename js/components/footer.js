@@ -21,7 +21,7 @@ export function renderFooter() {
           <div>
             <div class="footer__brand-name">${CONFIG.BRAND_NAME}</div>
             <p class="footer__brand-desc">
-              Piezas atemporales y exclusivas diseñadas con los más altos estándares de calidad. Joyería fina en baño de oro de 18k, laminados italianos y acero quirúrgico 316L.
+              Piezas atemporales y exclusivas inspiradas en la tradición orfebre colombiana. Joyería fina y accesorios elaborados con altos estándares de calidad y detalle artesanal.
             </p>
             <div class="footer__socials">
               <a href="${CONFIG.SOCIAL_LINKS.instagram}" class="footer__social" aria-label="Instagram de Aurea" target="_blank" rel="noopener">
@@ -40,12 +40,17 @@ export function renderFooter() {
           <div>
             <h3 class="footer__col-title">Colecciones</h3>
             <ul style="list-style: none; padding: 0;">
-              <li><a href="#/tienda/manillas" class="footer__link">Manillas de Oro</a></li>
-              <li><a href="#/tienda/cadenas" class="footer__link">Cadenas y Collares</a></li>
-              <li><a href="#/tienda/anillos" class="footer__link">Anillos de Lujo</a></li>
-              <li><a href="#/tienda/aretes" class="footer__link">Aretes y Candongas</a></li>
-              <li><a href="#/tienda/sets" class="footer__link">Sets para Regalar</a></li>
-              <li><a href="#/tienda/ofertas" class="footer__link">Ofertas Exclusivas</a></li>
+              <li><a href="#/tienda/manillas-tejidas" class="footer__link">Manillas Tejidas</a></li>
+              <li><a href="#/tienda/pulseras" class="footer__link">Pulseras (Balines, Diamantadas, Lisas)</a></li>
+              <li><a href="#/tienda/pulsos" class="footer__link">Pulsos de Oro</a></li>
+              <li><a href="#/tienda/aretes-tradicionales" class="footer__link">Aretes Tradicionales</a></li>
+              <li><a href="#/tienda/topitos" class="footer__link">Topitos de Oro</a></li>
+              <li><a href="#/tienda/cadenas" class="footer__link">Cadenas (Nacional e Italiano)</a></li>
+              <li><a href="#/tienda/joyeria" class="footer__link">Joyería Fina</a></li>
+              <li><a href="#/tienda/dijes" class="footer__link">Dijes y Medallas</a></li>
+              <li><a href="#/tienda/anillos" class="footer__link">Anillos</a></li>
+              <li><a href="#/tienda/tobilleras" class="footer__link">Tobilleras (Complementaria)</a></li>
+              <li><a href="#/tienda/ofertas" class="footer__link">Ofertas Especiales</a></li>
             </ul>
           </div>
 
@@ -78,7 +83,10 @@ export function renderFooter() {
 
         <div class="footer__bottom">
           <p class="footer__copy">
-            &copy; 2026 ${CONFIG.BRAND_NAME} — Joyería & Accesorios. Todos los derechos reservados. Precios expresados en Pesos Colombianos (COP).
+            &copy; 2026 ${CONFIG.BRAND_NAME} — Joyería & Accesorios. Todos los derechos reservados. Precios en Pesos Colombianos (COP).
+          </p>
+          <p class="footer__copy" style="margin-top: 4px; font-size: 0.78rem; opacity: 0.85;">
+            * Catálogo de referencia. Precios, materiales y disponibilidad sujetos a confirmación por WhatsApp.
           </p>
           <span class="footer__demo-notice">
             Envío gratis nacional en compras superiores a $200.000 COP

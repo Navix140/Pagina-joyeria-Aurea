@@ -84,8 +84,8 @@ export function hydrateProductSections() {
   const bestSellers = PRODUCTS.filter(p => p.tags.includes('mas-vendido')).slice(0, 4);
   fillGrid('grid-mas-vendidos', bestSellers);
 
-  // Offers — tagged 'oferta'
-  const offers = PRODUCTS.filter(p => p.tags.includes('oferta')).slice(0, 4);
+  // Offers — tagged 'oferta' or has oldPrice discount
+  const offers = PRODUCTS.filter(p => p.tags.includes('oferta') || p.oldPrice != null).slice(0, 4);
   fillGrid('grid-ofertas', offers);
 }
 
