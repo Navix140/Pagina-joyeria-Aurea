@@ -2,8 +2,6 @@
 
 <div align="center">
 
-![AUREA Banner](https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&h=400&fit=crop&q=80)
-
 **Tienda virtual de joyería y orfebrería colombiana.**  
 *Piezas tradicionales y contemporáneas en oro nacional y accesorios finos.*
 
