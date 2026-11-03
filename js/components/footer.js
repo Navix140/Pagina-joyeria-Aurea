@@ -70,13 +70,13 @@ export function renderFooter() {
           <div>
             <h3 class="footer__col-title">Envíos & Seguridad</h3>
             <p class="footer__brand-desc" style="margin-bottom: 8px;">
-              📦 <strong>Envíos a toda Colombia:</strong> Bogotá, Medellín, Cali, Barranquilla, Bucaramanga y municipios.
+              <strong>Envíos a toda Colombia:</strong> Bogotá, Medellín, Cali, Barranquilla, Bucaramanga y municipios.
             </p>
             <p class="footer__brand-desc" style="margin-bottom: 8px;">
-              💎 <strong>Garantía:</strong> Materiales hipoalergénicos y resistentes al agua.
+              <strong>Garantía:</strong> Materiales hipoalergénicos y acabados de alta calidad.
             </p>
             <p class="footer__brand-desc">
-              ✉️ ${CONFIG.CONTACT.email}
+              <strong>Email:</strong> ${CONFIG.CONTACT.email}
             </p>
           </div>
         </div>

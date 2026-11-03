@@ -1,163 +1,181 @@
-# ✨ AUREA — Joyería & Accesorios
+# AUREA — Joyería & Accesorios
 
 <div align="center">
 
-![AUREA Banner](https://images.unsplash.com/photo-1515562141589-67f0d569b6b3?w=1200&h=400&fit=crop&q=80)
+![AUREA Banner](https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1200&h=400&fit=crop&q=80)
 
-**Tienda virtual premium de alta joyería y accesorios en Colombia.**  
-*Piezas atemporales en oro laminado de 18k, acero quirúrgico 316L y plata fina.*
+**Tienda virtual de joyería y orfebrería colombiana.**  
+*Piezas tradicionales y contemporáneas en oro nacional y accesorios finos.*
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B%20Modules-F7DF1E?logo=javascript&logoColor=black)](#tecnologías)
-[![HTML5](https://img.shields.io/badge/HTML5-Semántico-E34F26?logo=html5&logoColor=white)](#tecnologías)
-[![CSS3](https://img.shields.io/badge/CSS3-Modern%20Grid%20%26%20Flex-1572B6?logo=css3&logoColor=white)](#tecnologías)
-[![Responsive](https://img.shields.io/badge/Design-100%25%20Responsive-brightgreen)](#características)
-[![Currency](https://img.shields.io/badge/Currency-COP%20(%24)-C6A45C)](#precios-y-moneda)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-Order%20Integration-25D366?logo=whatsapp&logoColor=white)](#pedidos-por-whatsapp)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B%20Modules-F7DF1E?logo=javascript&logoColor=black)](#tecnolog%C3%ADas-empleadas)
+[![HTML5](https://img.shields.io/badge/HTML5-Sem%C3%A1ntico-E34F26?logo=html5&logoColor=white)](#tecnolog%C3%ADas-empleadas)
+[![CSS3](https://img.shields.io/badge/CSS3-Modern%20Grid%20%26%20Flex-1572B6?logo=css3&logoColor=white)](#tecnolog%C3%ADas-empleadas)
+[![Responsive](https://img.shields.io/badge/Dise%C3%B1o-100%25%20Responsive-brightgreen)](#caracter%C3%ADsticas-principales)
+[![Currency](https://img.shields.io/badge/Moneda-COP%20(%24)-C6A45C)](#configuraci%C3%B3n-del-negocio)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-Integraci%C3%B3n%20de%20Pedidos-25D366?logo=whatsapp&logoColor=white)](#pedidos-y-checkout-v%C3%ADa-whatsapp)
 
-[Características](#-características-principales) •
-[Estructura](#-estructura-del-proyecto) •
-[Instalación y Uso](#-cómo-ejecutar-el-proyecto) •
-[Configuración](#-configuración-del-negocio) •
-[Despliegue](#-despliegue-en-producción)
+[Descripción](#descripción-del-proyecto) •
+[Características](#características-principales) •
+[Estructura](#estructura-del-catálogo) •
+[Arquitectura](#estructura-del-proyecto) •
+[Instalación](#cómo-ejecutar-el-proyecto) •
+[Configuración](#configuración-del-negocio) •
+[Despliegue](#despliegue-en-producción)
 
 </div>
 
 ---
 
-## 💎 Descripción del Proyecto
+## Descripción del Proyecto
 
-**AUREA** es una plataforma de comercio electrónico diseñada para brindar una experiencia de compra elegante, lujosa y fluida. Su estética combina tonos negros profundos (`#111111`), dorados satinados (`#C6A45C`) y marfil suave (`#F8F6F0`).
+AUREA es una plataforma de comercio electrónico diseñada para brindar una experiencia de compra distinguida, sobria y fluida, inspirada en la joyería y orfebrería tradicional colombiana. Su identidad visual combina tonalidades negro profundo (`#111111`), dorados cálidos (`#C6A45C`) y marfil (`#F8F6F0`).
 
-El proyecto está desarrollado completamente en **Vanilla JavaScript** moderno (ES Modules), sin dependencias pesadas de frameworks, garantizando una carga ultrarrápida, compatibilidad universal y facilidad de mantenimiento.
+El sistema está desarrollado íntegramente en Vanilla JavaScript moderno (ES Modules), sin dependencias externas ni frameworks pesados, garantizando una carga rápida, compatibilidad universal en dispositivos móviles y de escritorio, y facilidad de mantenimiento.
 
 ---
 
-## 🌟 Características Principales
+## Características Principales
 
-### 🛍️ Catálogo y Navegación
-- **8 Categorías Especializadas**: Manillas, Cadenas y Collares, Anillos, Aretes, Tobilleras, Dijes, Sets y Accesorios para Regalo.
-- **Buscador Reactivo**: Búsqueda en tiempo real por nombre, descripción, material o categoría con sugerencias automáticas.
+### Catálogo y Navegación
+- **10 Categorías Especializadas**: 9 colecciones principales y 1 línea complementaria.
+- **Buscador en Tiempo Real**: Búsqueda interactiva indexando nombre, descripción, material, subcategoría y tipo de oro.
 - **Filtros Funcionales**:
-  - Filtrado por categorías y colecciones (*Novedades, Más Vendidos, En Oferta*).
+  - Filtro por categoría y colecciones (*Novedades, Más Vendidos, En Oferta*).
+  - Subfiltros contextuales por subcategoría (*balines, diamantadas, lisas* en pulseras) y por tipo de oro (*nacional*).
   - Selector de rango de precios en Pesos Colombianos (COP).
-  - Ordenamiento dinámico: Popularidad, Menor a Mayor precio, Mayor a Menor precio, Novedades y Alfabético.
-  - Chips de filtros activos interactivos para remover criterios en 1 clic.
-  - Menú desplegable de filtros adaptado para celulares y tablets.
+  - Ordenamiento dinámico: Popularidad, Menor precio, Mayor precio, Novedades y Alfabético.
+  - Indicadores visuales de filtros activos con eliminación en un clic.
+  - Panel lateral de filtros optimizado para dispositivos móviles.
 
-### 💍 Ficha de Producto y Vista Rápida
-- **Modal interactivo**: Permite ver detalles de la pieza sin salir de la página.
-- **Selector de variantes**: Tallas (S, M, L, tallas de anillo 6-9) o largos de cadena (45, 50, 60 cm).
-- **Detalle de materiales**: Información honesta sobre acabados (acero quirúrgico 316L, recubrimiento PVD, baño de oro 18k).
-- **Control de cantidades** y badge de disponibilidad.
+### Ficha de Producto y Vista Rápida
+- **Modal Interactivo**: Permite consultar especificaciones, variantes e imágenes sin abandonar la navegación.
+- **Selector de Variantes**: Medidas, tallas y longitudes disponibles.
+- **Detalle de Materiales**: Especificación clara orientada a orfebrería nacional.
+- **Aviso de Referencia**: Leyenda informativa sobre confirmación de disponibilidad, materiales y precios finales vía WhatsApp.
 
-### 🛒 Carrito de Compras Deslizable
-- Panel lateral *slide-in* accesible desde cualquier sección.
-- Cálculo de subtotales, cantidades y total general.
-- **Barra de beneficio de envío**: Notifica dinámicamente cuánto falta para obtener envío gratis (umbral de \$200.000 COP).
-- **Persistencia local (`localStorage`)**: Los productos añadidos se conservan al recargar o cambiar de página.
+### Carrito de Compras Lateral
+- Panel deslizable accesible desde cualquier vista de la tienda.
+- Control de cantidades, cálculo dinámico de subtotales y total general.
+- Indicador de beneficio para envío gratuito nacional (umbral configurable de $200.000 COP).
+- Persistencia local mediante `localStorage` para conservar la selección del cliente al recargar la página.
 
-### ❤️ Lista de Favoritos (Wishlist)
-- Botón interactivo de favoritos en tarjetas, catálogo y modal de detalles.
-- Vista dedicada (`#/favoritos`) para revisar las joyas guardadas en cualquier momento.
-- Sincronización instantánea con almacenamiento local.
+### Lista de Favoritos (Wishlist)
+- Marcado de piezas favoritas desde tarjetas de producto, catálogo o modal de detalles.
+- Vista independiente (`#/favoritos`) para gestionar los artículos guardados.
+- Sincronización automática con almacenamiento local.
 
-### 📲 Pedidos y Checkout vía WhatsApp
-- Formulario de datos de despacho: Nombre completo, teléfono, ciudad/departamento, dirección detallada, método de pago y notas de regalo.
-- Validación de campos en tiempo real.
-- **Generador de mensaje para WhatsApp**: Crea un pedido estructurado y estético con lista desglosada, subtotales, costo de envío y datos del cliente.
-- Manejo de configuración provisional para pruebas inmediatas y botón de copiado de mensaje en 1 clic.
+### Pedidos y Checkout vía WhatsApp
+- Formulario de datos de entrega: nombre completo, teléfono de contacto, ciudad/departamento, dirección, método de pago sugerido y dedicatoria para regalo.
+- Validación de campos obligatorios en el cliente.
+- Generación automática de mensaje estructurado para WhatsApp con el resumen de piezas, subtotales, costo de envío y datos del cliente.
+- Opción de copiado de mensaje en un clic para mayor facilidad de uso.
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Catálogo
+
+El catálogo de AUREA se organiza en 10 categorías temáticas con 38 referencias comerciales de orfebrería nacional:
+
+| Categoría | Slug | Tipo / Subcategorías | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Manillas tejidas** | `manillas-tejidas` | Macramé artesanal | Diseños en hilo trenzado con balines, medallas y placas en oro |
+| **Pulseras** | `pulseras` | `balines`, `diamantadas`, `lisas` | Modelos de esferas doradas, tejidos helicoidales y cañas esclavas |
+| **Pulsos** | `pulsos` | Estructuras rígidas y eslabones | Piezas de media caña, tejido Fígaro y eslabones tradicionales |
+| **Aretes tradicionales** | `aretes-tradicionales` | Candongas y colgantes | Aros circulares lisos, grabados diamantados y gotas elegantes |
+| **Topitos** | `topitos` | Broche mariposa a presión | Bolitas clásicas, circonia suiza y filigrana tradicional |
+| **Cadenas** | `cadenas` | Oro nacional (`goldType: 'nacional'`) | Tejidos Cartier, Fígaro 3x1, Singapur, barbada, espartillo, chinesca y espejo |
+| **Joyería** | `joyeria` | Oro nacional (`goldType: 'nacional'`) | Rosarios clásicos, camándulas devocionales y gargantillas de gala |
+| **Dijes** | `dijes` | Medallas y figuras | Virgen María, San Benito, cruz clásica, milagrosa, corazón e iniciales |
+| **Anillos** | `anillos` | Solitarios y argollas | Solitario clásico, anillo sello, gema verde estilo esmeralda y alianzas |
+| **Tobilleras** *(Complementaria)* | `tobilleras` | Cadenas finas de tobillo | Modelos sutiles con balines y dijes colgantes |
+
+---
+
+## Estructura del Proyecto
 
 ```text
 Pagina-Joyeria/
-├── index.html                   # Documento HTML principal
-├── iniciar_tienda.bat           # Lanzador rápido en 1 clic para Windows
-├── server.ps1                   # Servidor HTTP local nativo (PowerShell)
+├── index.html                   # Estructura HTML principal y metaetiquetas SEO
+├── iniciar_tienda.bat           # Script de inicio en local para entorno Windows
+├── server.ps1                   # Servidor HTTP ligero nativo en PowerShell
 ├── README.md                    # Documentación del proyecto
 │
 ├── css/
-│   └── styles.css               # Hoja de estilos completa, variables CSS y diseño responsive
+│   └── styles.css               # Estilos globales, variables CSS y diseño responsive
 │
 ├── data/
-│   ├── config.js                # Configuración de marca, WhatsApp, envío y colores
-│   └── products.js              # Catálogo de productos, categorías, precios y fotos
+│   ├── config.js                # Configuración de marca, contacto, envíos y WhatsApp
+│   └── products.js              # Colección de categorías y catálogo de productos
 │
 └── js/
-    ├── app.js                   # Punto de entrada principal y registro de rutas
-    ├── router.js                # Enrutador cliente basado en hash (#/tienda, #/checkout, etc.)
-    ├── store.js                 # Manejador de estado global reactivo (Pub/Sub) con persistencia
+    ├── app.js                   # Inicialización y registro de rutas de la aplicación
+    ├── router.js                # Enrutador cliente SPA basado en hash (#/tienda, #/checkout)
+    ├── store.js                 # Gestor de estado reactivo (Pub/Sub) con persistencia en localStorage
     │
-    ├── components/              # Componentes visuales modulares
-    │   ├── header.js            # Navegación principal, buscador y contador de carrito
-    │   ├── hero.js              # Sección principal de bienvenida con llamados a la acción
-    │   ├── categories.js        # Cuadrícula interactiva de colecciones
-    │   ├── productCard.js       # Tarjeta reutilizable de producto
-    │   ├── productModal.js      # Modal de detalle y vista rápida
-    │   ├── productSections.js   # Bloques de productos (Destacados, Nuevos, Ofertas)
+    ├── components/              # Componentes de interfaz de usuario
+    │   ├── header.js            # Barra de navegación, enlaces de colecciones y buscador
+    │   ├── hero.js              # Sección principal con banner panorámico
+    │   ├── categories.js        # Cuadrícula de colecciones principales y complementarias
+    │   ├── productCard.js       # Tarjeta modular de producto con precio y acciones
+    │   ├── productModal.js      # Ventana modal de detalle del producto
+    │   ├── productSections.js   # Secciones de inicio (Destacados, Nuevos, Más Vendidos, Ofertas)
     │   ├── cart.js              # Panel lateral de carrito de compras
-    │   ├── search.js            # Overlay de búsqueda en vivo
-    │   ├── toast.js             # Notificaciones emergentes temporales
-    │   └── footer.js            # Pie de página con enlaces y redes sociales
+    │   ├── search.js            # Buscador predictivo en vivo
+    │   ├── toast.js             # Notificaciones de acción en pantalla
+    │   └── footer.js            # Pie de página con información y enlaces
     │
-    └── views/                   # Vistas principales de la aplicación
-        ├── home.js              # Página de inicio con testimonios, beneficios y FAQ
-        ├── shop.js              # Catálogo completo con filtros avanzados
-        ├── favorites.js         # Vista de joyas favoritas guardadas
-        └── checkout.js          # Proceso de compra y confirmación por WhatsApp
+    └── views/                   # Vistas principales de la tienda
+        ├── home.js              # Página de inicio con beneficios, testimonios y preguntas frecuentes
+        ├── shop.js              # Catálogo general con filtros dinámicos y aviso comercial
+        ├── favorites.js         # Vista de productos guardados en favoritos
+        └── checkout.js          # Formulario de despacho y enlace de pedido a WhatsApp
 ```
 
 ---
 
-## 🚀 Cómo Ejecutar el Proyecto
+## Cómo Ejecutar el Proyecto
 
-Dado que el proyecto utiliza **JavaScript ES Modules** (`type="module"`), el navegador requiere que los archivos se sirvan a través de un protocolo HTTP/HTTPS local:
+Al utilizar JavaScript ES Modules (`type="module"`), el navegador requiere que los archivos se sirvan mediante un servidor local bajo protocolo HTTP:
 
-### Opción 1: En Windows con el archivo `.bat` (Recomendado)
-Simplemente haz doble clic sobre el archivo [**`iniciar_tienda.bat`**](iniciar_tienda.bat).
-- Detectará si tienes Python o Node.js; si no tienes ninguno, levantará automáticamente el servidor ligero nativo en PowerShell y abrirá tu navegador en `http://localhost:8080/`.
+### Opción 1: En Windows mediante `iniciar_tienda.bat` (Recomendado)
+Haz doble clic sobre el archivo `iniciar_tienda.bat`. Si no detecta Python ni Node.js, utilizará automáticamente el servidor nativo de PowerShell en el puerto `8080` y abrirá la tienda en tu navegador por defecto.
 
 ### Opción 2: Con Visual Studio Code (Live Server)
-1. Abre la carpeta del proyecto en VS Code.
+1. Abre la carpeta del proyecto en Visual Studio Code.
 2. Instala la extensión **Live Server**.
 3. Haz clic derecho sobre `index.html` y selecciona **Open with Live Server**.
 
 ### Opción 3: Con Python
 ```bash
-# En la raíz del proyecto
 python -m http.server 8080
 ```
-Luego abre tu navegador en `http://localhost:8080/`.
+Luego abre en tu navegador: `http://localhost:8080/`.
 
 ### Opción 4: Con Node.js / npx
 ```bash
 npx serve . -l 8080
-# o
-npx http-server -p 8080
 ```
 
 ---
 
-## ⚙️ Configuración del Negocio
+## Configuración del Negocio
 
-Todos los datos clave de tu tienda se gestionan en dos archivos sencillos:
+Los parámetros comerciales y de catálogo se administran en dos archivos ubicados en la carpeta `data/`:
 
-### 1. Datos generales y WhatsApp (`data/config.js`)
-Edita este archivo para configurar los datos reales de tu tienda:
+### 1. Parámetros de Marca y WhatsApp (`data/config.js`)
+Configura el número oficial de atención de tu joyería:
 
 ```javascript
 export const CONFIG = {
   BRAND_NAME: 'AUREA',
   BRAND_TAGLINE: 'Joyería & Accesorios',
 
-  // Configura tu número de WhatsApp con código de país (57 para Colombia) sin espacios ni signos:
+  // Número de WhatsApp con indicativo de país (57 para Colombia), sin espacios ni signos:
   WHATSAPP_NUMBER: '573001234567',
 
   CURRENCY: 'COP',
-  SHIPPING_COST: 12000,              // Costo de envío estándar
-  FREE_SHIPPING_THRESHOLD: 200000,   // Envío gratis a partir de este monto
+  SHIPPING_COST: 12000,              // Costo de despacho estándar
+  FREE_SHIPPING_THRESHOLD: 200000,   // Monto mínimo para despacho gratuito
 
   SOCIAL_LINKS: {
     instagram: 'https://instagram.com/tu_cuenta',
@@ -171,67 +189,61 @@ export const CONFIG = {
 };
 ```
 
-### 2. Catálogo de Productos (`data/products.js`)
-Para añadir, editar o remover piezas, modifica el arreglo `PRODUCTS`:
+### 2. Catálogo de Referencias (`data/products.js`)
+Cada producto contiene la estructura de datos compatible con los filtros de la tienda:
 
 ```javascript
 {
-  id: 17,
-  name: 'Nombre de la Joya',
-  category: 'manillas', // manillas | cadenas | anillos | aretes | tobilleras | dijes | sets | accesorios
-  price: 95000,         // Precio en COP (entero sin decimales)
-  oldPrice: 120000,     // Precio anterior (o null si no tiene descuento)
-  description: 'Descripción elegante de la pieza.',
-  material: 'Acero inoxidable con baño de oro de 18k',
+  id: 1,
+  name: 'Manilla Tejida Negra con Balines de Oro',
+  category: 'manillas-tejidas',
+  subcategory: null,               // 'balines' | 'diamantadas' | 'lisas' | null
+  goldType: 'nacional',            // 'nacional' | 'italiano'
+  price: 95000,                    // Precio en pesos colombianos (entero)
+  oldPrice: 115000,                // Precio anterior o null
+  description: 'Descripción orfebre de la pieza.',
+  material: 'Oro nacional, quilataje por confirmar',
   availability: 'En stock',
-  tags: ['nuevo', 'mas-vendido'], // nuevo | oferta | mas-vendido
-  variants: ['Talla S', 'Talla M'],
-  images: ['https://tu-imagen.jpg'],
-  popularity: 90,
-  dateAdded: '2026-10-27'
+  tags: ['nuevo', 'mas-vendido'],   // 'nuevo' | 'mas-vendido' | 'oferta'
+  variants: ['Ajustable standard', 'Ajustable juvenil'],
+  images: ['https://url-de-imagen.jpg'],
+  popularity: 96,
+  dateAdded: '2026-10-01'
 }
 ```
 
 ---
 
-## 🌐 Despliegue en Producción
+## Despliegue en Producción
 
-Puedes alojar esta tienda de forma **100% gratuita** en cualquier plataforma estática:
+El proyecto es totalmente estático, por lo que puede alojarse de forma directa y gratuita en plataformas como:
 
 ### GitHub Pages
-1. Sube el repositorio a GitHub:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit - AUREA Joyería"
-   git branch -M main
-   git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git
-   git push -u origin main
-   ```
-2. En GitHub, ve a **Settings** > **Pages**.
-3. En **Branch**, selecciona `main` y la carpeta `/(root)`.
-4. Guarda y en pocos segundos tu tienda estará en línea en `https://TU_USUARIO.github.io/TU_REPOSITORIO/`.
+1. Sube tu repositorio a GitHub en la rama `main`.
+2. En GitHub, navega a **Settings** > **Pages**.
+3. En **Source**, selecciona **Deploy from a branch**, elige la rama `main` y la carpeta `/(root)`.
+4. La tienda estará publicada en la URL proporcionada por GitHub Pages.
 
 ### Vercel / Netlify
-1. Conecta tu repositorio de GitHub en [vercel.com](https://vercel.com) o [netlify.com](https://netlify.com).
-2. Deja la configuración de compilación vacía (es un proyecto estático sin build step).
-3. Haz clic en **Deploy**.
+1. Conecta el repositorio de GitHub en el panel de Vercel o Netlify.
+2. No requiere comando de compilación (Build Command) ni carpeta de salida (Output Directory).
+3. Selecciona **Deploy**.
 
 ---
 
-## 🛠️ Tecnologías Empleadas
+## Tecnologías Empleadas
 
-- **HTML5**: Semántica web, accesibilidad (`aria-label`, enlaces de salto) y meta etiquetas OpenGraph.
-- **CSS3 Puro**: Variables CSS para paleta dorada/marfil, CSS Grid, Flexbox, animaciones clave (`@keyframes`) y media queries adaptables.
-- **JavaScript Moderno (ES6+)**:
+- **HTML5**: Marcado semántico, accesibilidad (`aria-label`, atributos de navegación) y etiquetas meta para SEO.
+- **CSS3 Puro**: Arquitectura con variables CSS (paleta dorada, negro y marfil), CSS Grid, Flexbox y media queries fluidas.
+- **JavaScript (ES6+)**:
   - Módulos nativos (`import` / `export`).
-  - Hash Routing sin recargas (`router.js`).
-  - Patrón Pub/Sub reactivo para estado global (`store.js`).
-  - Web Storage API (`localStorage`) para persistencia.
-- **Google Fonts**: Tipografías *Playfair Display* (títulos de lujo) e *Inter* (lectura nítida).
+  - Enrutamiento cliente basado en hash sin recarga de página.
+  - Patrón Pub/Sub para reactividad del estado global.
+  - Web Storage API (`localStorage`) para persistencia de carrito y favoritos.
+- **Tipografía**: Fuentes *Playfair Display* e *Inter* mediante Google Fonts.
 
 ---
 
-## 📄 Licencia
+## Licencia
 
-Este proyecto fue desarrollado para la tienda virtual **AUREA — Joyería & Accesorios**. Libre de uso y personalización según las necesidades de tu marca.
+Proyecto desarrollado para la tienda virtual **AUREA — Joyería & Accesorios**. Libre para uso, adaptación y despliegue comercial.

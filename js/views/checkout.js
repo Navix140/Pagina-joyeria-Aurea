@@ -135,7 +135,7 @@ export function renderCheckoutView(container) {
 
               <div style="background: rgba(198,164,92,0.1); border-left: 3px solid var(--gold); padding: 14px 18px; border-radius: var(--radius-sm); margin: 24px 0;">
                 <p style="margin: 0; font-size: 0.88rem; color: var(--black);">
-                  <strong>✨ Proceso 100% seguro:</strong> Al dar clic en "Enviar pedido por WhatsApp", se generará un mensaje automático con el detalle de tus joyas. Nuestro equipo de AUREA confirmará disponibilidad y te enviará los datos de pago inmediatamente.
+                  <strong>Proceso 100% seguro:</strong> Al dar clic en "Enviar pedido por WhatsApp", se generará un mensaje automático con el detalle de tus joyas. Nuestro equipo de AUREA confirmará disponibilidad y te enviará los datos de pago inmediatamente.
                 </p>
               </div>
 
@@ -300,28 +300,28 @@ function buildWhatsAppMessage(order) {
     return `• ${item.qty}x ${item.name}${variantStr} - ${formatPrice(item.price * item.qty)}`;
   }).join('\n');
 
-  const notesSection = order.notes ? `\n📝 *Notas o Dedicatoria:*\n${order.notes}\n` : '';
+  const notesSection = order.notes ? `\n*Notas o Dedicatoria:*\n${order.notes}\n` : '';
 
-  return `✨ *NUEVO PEDIDO — ${CONFIG.BRAND_FULL}* ✨
+  return `*NUEVO PEDIDO — ${CONFIG.BRAND_FULL}*
 
 Hola, deseo confirmar el siguiente pedido de joyería:
 
-🛍️ *PIEZAS SELECCIONADAS:*
+*PIEZAS SELECCIONADAS:*
 ${lineItems}
 
-💰 *TOTALES:*
+*TOTALES:*
 • Subtotal: ${formatPrice(order.subtotal)}
-• Envío: ${order.shipping === 0 ? '¡Gratis!' : formatPrice(order.shipping)}
+• Envío: ${order.shipping === 0 ? 'Gratis' : formatPrice(order.shipping)}
 • *TOTAL A PAGAR: ${formatPrice(order.total)}*
 
-📍 *DATOS DE ENTREGA:*
+*DATOS DE ENTREGA:*
 • *Nombre:* ${order.name}
 • *Teléfono:* ${order.phone}
 • *Ciudad:* ${order.city}
 • *Dirección:* ${order.address}
 • *Método de pago:* ${order.payment}
 ${notesSection}
-Quedo atento(a) a sus datos para completar el pago y coordinar el despacho. ¡Muchas gracias!`;
+Quedo atento(a) a sus datos para completar el pago y coordinar el despacho. Muchas gracias.`;
 }
 
 /**
@@ -365,7 +365,7 @@ function showOrderModal(order, message, isProvisional) {
 
         ${isProvisional ? `
           <div style="background: rgba(212,183,106,0.15); border: 1px solid var(--gold); border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 16px; font-size: 0.85rem;">
-            <strong>⚙️ Configuración Provisional Identificada:</strong><br>
+            <strong>Configuración Provisional:</strong><br>
             El número oficial de WhatsApp de AUREA aún está marcado como <code>CONFIGURAR_NUMERO_AQUI</code> en <code>data/config.js</code>.
             Puedes abrir WhatsApp para elegir el contacto o copiar el texto generado para enviarlo.
           </div>
