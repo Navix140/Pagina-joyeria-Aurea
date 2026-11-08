@@ -6,7 +6,9 @@
  * 
  * NOTA DEL CATÃLOGO:
  * - CatÃ¡logo de referencia inspirado en la joyerÃ­a y orfebrerÃ­a
- *   tradicional colombiana (38 referencias comerciales).
+ *   tradicional colombiana (33 referencias comerciales activas).
+ * - 5 referencias retiradas por coherencia fotográfica; consultar
+ *   data/products-retired.js para el respaldo completo.
  * - Precios de referencia en pesos colombianos (COP).
  * - Precios, materiales y disponibilidad sujetos a confirmaciÃ³n
  *   directa por WhatsApp.
@@ -183,25 +185,7 @@ export const PRODUCTS = [
     popularity: 94,
     dateAdded: '2026-10-02',
   },
-  {
-    id: 6,
-    name: 'Pulsera Singapur Diamantada',
-    category: 'pulseras',
-    subcategory: 'diamantadas',
-    goldType: 'nacional',
-    price: 245000,
-    oldPrice: null,
-    description: 'Tejido helicoidal con facetas diamantadas que capturan la luz en cada movimiento creando destellos brillantes y continuos.',
-    material: 'Oro nacional, quilataje por confirmar',
-    availability: 'En stock',
-    tags: ['nuevo'],
-    variants: ['17 cm', '18 cm'],
-    images: [
-      'assets/images/products/prod-06-pulsera-singapur-diamantada.jpg',
-    ],
-    popularity: 89,
-    dateAdded: '2026-10-05',
-  },
+
   {
     id: 7,
     name: 'Pulsera Lisa Tipo Esclava',
@@ -323,25 +307,6 @@ export const PRODUCTS = [
     ],
     popularity: 86,
     dateAdded: '2026-10-07',
-  },
-  {
-    id: 13,
-    name: 'Aretes Colgantes Tipo Gota',
-    category: 'aretes-tradicionales',
-    subcategory: null,
-    goldType: 'nacional',
-    price: 240000,
-    oldPrice: null,
-    description: 'DiseÃ±o colgante con silueta de lÃ¡grima en oro estilizado y movimiento grÃ¡cil al andar, perfecto para eventos especiales.',
-    material: 'Oro nacional, quilataje por confirmar',
-    availability: 'En stock',
-    tags: ['elegante'],
-    variants: ['Largo 3.5 cm'],
-    images: [
-      'assets/images/products/prod-13-aretes-colgantes-gota.jpg',
-    ],
-    popularity: 80,
-    dateAdded: '2026-10-15',
   },
 
   // ==========================================
@@ -565,25 +530,6 @@ export const PRODUCTS = [
     dateAdded: '2026-10-02',
   },
   {
-    id: 25,
-    name: 'CamÃ¡ndula Tradicional en Oro Nacional',
-    category: 'joyeria',
-    subcategory: null,
-    goldType: 'nacional',
-    price: 460000,
-    oldPrice: null,
-    description: 'Pieza representativa de la devociÃ³n y orfebrerÃ­a colombiana con eslabones finos, cuentas esfÃ©ricas y caÃ­da armoniosa.',
-    material: 'Oro nacional, quilataje por confirmar',
-    availability: 'En stock',
-    tags: ['tradicion'],
-    variants: ['Longitud 45 cm', 'Longitud 50 cm'],
-    images: [
-      'assets/images/products/prod-25-camandula-tradicional.jpg',
-    ],
-    popularity: 88,
-    dateAdded: '2026-10-06',
-  },
-  {
     id: 26,
     name: 'Gargantilla Artesanal en Oro Nacional',
     category: 'joyeria',
@@ -701,25 +647,6 @@ export const PRODUCTS = [
     popularity: 82,
     dateAdded: '2026-10-17',
   },
-  {
-    id: 32,
-    name: 'Dije Letra Inicial en Oro',
-    category: 'dijes',
-    subcategory: null,
-    goldType: 'nacional',
-    price: 135000,
-    oldPrice: null,
-    description: 'TipografÃ­a cursiva elegante con acabado pulido para llevar la inicial personal o de un ser querido.',
-    material: 'Oro nacional, quilataje por confirmar',
-    availability: 'En stock',
-    tags: ['personalizable'],
-    variants: ['Inicial A - Z'],
-    images: [
-      'assets/images/products/prod-32-dije-letra-inicial.jpg',
-    ],
-    popularity: 78,
-    dateAdded: '2026-10-20',
-  },
 
   // ==========================================
   // 9. ANILLOS (4 referencias)
@@ -822,25 +749,6 @@ export const PRODUCTS = [
     ],
     popularity: 77,
     dateAdded: '2026-10-05',
-  },
-  {
-    id: 38,
-    name: 'Tobillera Doble Cadena con Dijes Sutiles',
-    category: 'tobilleras',
-    subcategory: null,
-    goldType: 'nacional',
-    price: 230000,
-    oldPrice: null,
-    description: 'DiseÃ±o en cascada de dos hebras finas de oro nacional con pequeÃ±os colgantes de brillo dinÃ¡mico y broche reasa.',
-    material: 'Oro nacional, quilataje por confirmar',
-    availability: 'En stock',
-    tags: ['nuevo'],
-    variants: ['23 cm + 3 cm extensiÃ³n'],
-    images: [
-      'assets/images/products/prod-38-tobillera-doble-cadena-dijes.jpg',
-    ],
-    popularity: 74,
-    dateAdded: '2026-10-14',
   },
 ];
 
