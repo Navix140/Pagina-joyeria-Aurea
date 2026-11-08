@@ -20,9 +20,12 @@ export const CONFIG = {
 
   /**
    * Número de WhatsApp para pedidos.
-   * ⚠️ CONFIGURA TU NÚMERO REAL AQUÍ ⚠️
-   * Formato: código de país + número, sin espacios ni signos.
-   * Ejemplo Colombia: 573001234567
+   * ⚠️ REFERENCIA — Aún no hay número real asignado.
+   * El propietario debe reemplazar 'CONFIGURAR_NUMERO_AQUI'
+   * con el número real de AUREA (formato: 573001234567,
+   * sin espacios ni signos).
+   * Mientras no se configure, los pedidos se preparan pero
+   * no se pueden enviar realmente por WhatsApp.
    */
   WHATSAPP_NUMBER: 'CONFIGURAR_NUMERO_AQUI',
 
