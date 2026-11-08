@@ -59,17 +59,17 @@ export function renderFooter() {
             </ul>
           </div>
 
-          <!-- Col 4: Contacto & Envíos -->
+          <!-- Col 4: Contacto -->
           <div>
-            <h3 class="footer__col-title">Contacto & Envíos</h3>
+            <h3 class="footer__col-title">Contacto</h3>
             <p class="footer__brand-desc" style="margin-bottom: 8px;">
-              <strong>Envíos a toda Colombia:</strong> Bogotá, Medellín, Cali, Barranquilla, Bucaramanga y municipios.
+              Para pedidos y consultas, contáctanos por WhatsApp.
             </p>
             <p class="footer__brand-desc" style="margin-bottom: 8px;">
-              <strong>Garantía:</strong> Materiales hipoalergénicos y acabados de alta calidad.
-            </p>
-            <p class="footer__brand-desc">
               <strong>Email:</strong> ${CONFIG.CONTACT.email}
+            </p>
+            <p class="footer__brand-desc" style="margin-bottom: 8px;">
+              Los precios, materiales y disponibilidad se confirman al momento del pedido.
             </p>
           </div>
         </div>

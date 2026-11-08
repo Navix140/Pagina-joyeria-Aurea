@@ -125,8 +125,7 @@ export function renderCheckoutView(container) {
 
               <div class="checkout__notice">
                 <p style="margin: 0; font-size: 0.82rem; color: var(--black); line-height: 1.6;">
-                  <strong>Proceso 100% seguro:</strong> Al confirmar, se generará un mensaje automático con el detalle de tus joyas.
-                  Nuestro equipo de AUREA confirmará disponibilidad y te enviará los datos de pago inmediatamente.
+                  Al confirmar, se generará un mensaje automático con el detalle de tus joyas para coordinar por WhatsApp.
                 </p>
                 ${!CONFIG.WHATSAPP_NUMBER || CONFIG.WHATSAPP_NUMBER === 'CONFIGURAR_NUMERO_AQUI' ? `
                 <div style="margin-top: 10px; padding: 10px 14px; background: rgba(198,164,92,0.08); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--gray-dark, #8F702E);">
@@ -175,16 +174,14 @@ export function renderCheckoutView(container) {
               </div>
               <div class="checkout__summary-row" style="color: var(--gray-text); font-size: 0.85rem;">
                 <span>Envío</span>
-                <span>${shippingFree ? '<strong style="color: var(--gray-dark);">Sujeto a confirmación</strong>' : formatPrice(shipping)}</span>
+                <span style="color: var(--gray-dark);">Por confirmar</span>
               </div>
-              ${!shippingFree ? `
-                <div style="font-size: 0.75rem; color: var(--gray-dark); margin: 4px 0 8px;">
-                  Consulta costo de envío al momento del pedido
-                </div>
-              ` : ''}
+              <div style="font-size: 0.75rem; color: var(--gray-dark); margin: 4px 0 8px;">
+                El costo de envío se confirma al coordinar por WhatsApp.
+              </div>
               <div class="checkout__summary-row checkout__summary-row--total">
                 <span>Total a Pagar</span>
-                <span>${formatPrice(total)}</span>
+                <span style="color: var(--gray-dark);">Subtotal + envío (por confirmar)</span>
               </div>
             </div>
 
@@ -300,8 +297,7 @@ ${lineItems}
 
 *TOTALES:*
 • Subtotal: ${formatPrice(order.subtotal)}
-• Envío: ${order.shipping === 0 ? 'Gratis' : formatPrice(order.shipping)}
-• *TOTAL A PAGAR: ${formatPrice(order.total)}*
+• Envío: Por confirmar (se coordinará por WhatsApp)
 
 *DATOS DE ENTREGA:*
 • *Nombre:* ${order.name}
@@ -310,7 +306,7 @@ ${lineItems}
 • *Dirección:* ${order.address}
 • *Método de pago:* ${order.payment}
 ${notesSection}
-Quedo atento(a) a sus datos para completar el pago y coordinar el despacho. Muchas gracias.`;
+Quedo atento(a) a sus datos para completar el pago y coordinar el despacho y el costo de envío. Muchas gracias.`;
 }
 
 function handleOrderSubmission(order) {
@@ -342,7 +338,10 @@ function showOrderModal(order, message, isProvisional) {
           </div>
           <h2 style="font-size: 1.5rem; margin-bottom: 6px;">¡Mensaje de Pedido Listo!</h2>
           <p style="color: var(--gray-text); font-size: 0.9rem;">
-            Total del pedido: <strong>${formatPrice(order.total)}</strong> (${order.items.length} ${order.items.length === 1 ? 'joya' : 'joyas'})
+            Subtotal del pedido: <strong>${formatPrice(order.subtotal)}</strong> (${order.items.length} ${order.items.length === 1 ? 'joya' : 'joyas'})
+          </p>
+          <p style="color: var(--gray-text); font-size: 0.8rem; margin-top: 6px;">
+            El costo de envío se confirmará al coordinar por WhatsApp.
           </p>
         </div>
 
@@ -444,7 +443,7 @@ function showOrderModal(order, message, isProvisional) {
       clearCart();
       closeModal();
       window.location.hash = '#/tienda';
-      showToast('¡Gracias por tu compra! Tu carrito ha sido reiniciado', 'success');
+      showToast('Tu pedido está preparado. Tu carrito ha sido reiniciado.', 'success');
     };
   }
 }

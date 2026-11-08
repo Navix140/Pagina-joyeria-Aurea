@@ -438,13 +438,15 @@ function clearAllFilters() {
 function bindShopEvents(container) {
   const mobileFilterBtn = document.getElementById('shop-mobile-filter-btn');
   const filtersPanel = document.getElementById('shop-filters-panel');
-  if (mobileFilterBtn && filtersPanel) {
-    mobileFilterBtn.addEventListener('click', () => {
-      filtersPanel.classList.toggle('shop__filters--open');
-      const isOpen = filtersPanel.classList.contains('shop__filters--open');
-      mobileFilterBtn.querySelector('span').textContent = isOpen ? 'Ocultar filtros' : 'Filtros';
+
+  // Cerrar panel al hacer clic en un radio de categoría
+  const catRadios = document.querySelectorAll('input[name="shop-category"]');
+  catRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      activeCategory = radio.value;
+      applyFiltersAndRender();
     });
-  }
+  });
 
   // Collapsible filter groups
   const collapsibleTitles = document.querySelectorAll('.collapsible__title');
@@ -462,11 +464,6 @@ function bindShopEvents(container) {
         icon.style.transform = 'rotate(180deg)';
       }
     });
-  });
-
-  const catRadios = document.querySelectorAll('input[name="shop-category"]');
-  catRadios.forEach(radio => {
-    radio.addEventListener('change', () => { activeCategory = radio.value; applyFiltersAndRender(); });
   });
 
   const subcatRadios = document.querySelectorAll('input[name="shop-subcategory"]');
@@ -563,7 +560,9 @@ function bindShopEvents(container) {
     radio.addEventListener('change', closePanelOnMobile);
   });
 
-  sortSelect.addEventListener('change', closePanelOnMobile);
+  if (sortSelect) {
+    sortSelect.addEventListener('change', closePanelOnMobile);
+  }
 }
 
 function escapeHTML(str) {

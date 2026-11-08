@@ -560,6 +560,7 @@ p { margin-bottom: 1rem; }
 
 /* Botón de cierre del panel de filtros */
 .shop__filter-close {
+  display: none;
   position: absolute; top: 12px; right: 14px;
   background: var(--black); color: var(--ivory);
   border: none; border-radius: var(--radius-sm);
@@ -569,6 +570,13 @@ p { margin-bottom: 1rem; }
   transition: opacity var(--transition);
 }
 .shop__filter-close:hover { opacity: 1; background: var(--gold-dark); }
+
+/* Mostrar botón de cierre únicamente en móviles y tablets */
+@media (max-width: 1024px) {
+  .shop__filter-close {
+    display: flex;
+  }
+}
 
 /* Asegurar que el panel de filtros no cause desbordes horizontales */
 .shop__filters {
