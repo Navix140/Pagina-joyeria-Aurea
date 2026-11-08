@@ -55,7 +55,6 @@ export function renderProductCard(product) {
           </svg>
         </button>
       `}
-      <button class="product-card__quick-view" data-action="view-details">Ver detalle</button>
     </div>
     <div class="product-card__info">
       <h3 class="product-card__name">${escapeHTML(product.name)}</h3>

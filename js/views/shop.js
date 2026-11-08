@@ -33,6 +33,15 @@ function matchCategory(productCategory, targetCategoryId) {
   return false;
 }
 
+/**
+ * Detecta qué tipos de oro tienen productos asociados para no mostrar opciones vacías.
+ */
+function getAvailableGoldTypes() {
+  const types = new Set();
+  PRODUCTS.forEach(p => { if (p.goldType) types.add(p.goldType); });
+  return types;
+}
+
 export function renderShopView(params = {}, container) {
   if (!container) return;
 
@@ -95,11 +104,12 @@ export function renderShopView(params = {}, container) {
                 />
               </div>
 
-              <div class="shop__filter-group">
-                <div class="shop__filter-title">
+              <div class="shop__filter-group collapsible" id="filter-group-categories">
+                <div class="shop__filter-title collapsible__title">
                   <span>Categorías</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                 </div>
-                <div class="shop__filter-options">
+                <div class="shop__filter-options collapsible__content">
                   <label class="shop__filter-option">
                     <input
                       type="radio" name="shop-category" value="todas"
@@ -124,11 +134,12 @@ export function renderShopView(params = {}, container) {
                 </div>
               </div>
 
-              <div class="shop__filter-group">
-                <div class="shop__filter-title">
+              <div class="shop__filter-group collapsible" id="filter-group-goldtype">
+                <div class="shop__filter-title collapsible__title">
                   <span>Tipo de Oro</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                 </div>
-                <div class="shop__filter-options">
+                <div class="shop__filter-options collapsible__content">
                   <label class="shop__filter-option">
                     <input
                       type="radio" name="shop-goldtype" value=""
@@ -137,30 +148,28 @@ export function renderShopView(params = {}, container) {
                     />
                     <span>Todo tipo de oro</span>
                   </label>
-                  <label class="shop__filter-option">
-                    <input
-                      type="radio" name="shop-goldtype" value="nacional"
-                      class="shop__filter-checkbox"
-                      ${activeGoldType === 'nacional' ? 'checked' : ''}
-                    />
-                    <span>Oro Nacional</span>
-                  </label>
-                  <label class="shop__filter-option">
-                    <input
-                      type="radio" name="shop-goldtype" value="italiano"
-                      class="shop__filter-checkbox"
-                      ${activeGoldType === 'italiano' ? 'checked' : ''}
-                    />
-                    <span>Oro Italiano</span>
-                  </label>
+                  ${getAvailableGoldTypes().map(type => {
+                    const label = type === 'nacional' ? 'Oro Nacional' : type === 'italiano' ? 'Oro Italiano' : type;
+                    return `
+                      <label class="shop__filter-option">
+                        <input
+                          type="radio" name="shop-goldtype" value="${type}"
+                          class="shop__filter-checkbox"
+                          ${activeGoldType === type ? 'checked' : ''}
+                        />
+                        <span>${label}</span>
+                      </label>
+                    `;
+                  }).join('')}
                 </div>
               </div>
 
-              <div class="shop__filter-group">
-                <div class="shop__filter-title">
+              <div class="shop__filter-group collapsible" id="filter-group-collections">
+                <div class="shop__filter-title collapsible__title">
                   <span>Colecciones</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                 </div>
-                <div class="shop__filter-options">
+                <div class="shop__filter-options collapsible__content">
                   <label class="shop__filter-option">
                     <input
                       type="radio" name="shop-tag" value=""
@@ -196,11 +205,13 @@ export function renderShopView(params = {}, container) {
                 </div>
               </div>
 
-              <div class="shop__filter-group">
-                <div class="shop__filter-title">
+              <div class="shop__filter-group collapsible" id="filter-group-price">
+                <div class="shop__filter-title collapsible__title">
                   <span>Precio (COP)</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                 </div>
-                <div class="shop__price-range">
+                <div class="shop__filter-options collapsible__content">
+                  <div class="shop__price-range">
                   <div class="shop__price-inputs">
                     <input
                       type="number" id="shop-price-min"
@@ -218,6 +229,7 @@ export function renderShopView(params = {}, container) {
                   </div>
                 </div>
               </div>
+            </div>
 
               <button class="shop__clear-filters" id="shop-clear-filters-btn">
                 Limpiar filtros
@@ -424,6 +436,24 @@ function bindShopEvents(container) {
       mobileFilterBtn.querySelector('span').textContent = isOpen ? 'Ocultar filtros' : 'Filtros';
     });
   }
+
+  // Collapsible filter groups
+  const collapsibleTitles = document.querySelectorAll('.collapsible__title');
+  collapsibleTitles.forEach(title => {
+    title.addEventListener('click', () => {
+      const group = title.closest('.collapsible');
+      const content = group.querySelector('.collapsible__content');
+      const icon = title.querySelector('svg');
+      const isOpen = content.classList.contains('collapsible__content--open');
+      if (isOpen) {
+        content.classList.remove('collapsible__content--open');
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        content.classList.add('collapsible__content--open');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
 
   const catRadios = document.querySelectorAll('input[name="shop-category"]');
   catRadios.forEach(radio => {

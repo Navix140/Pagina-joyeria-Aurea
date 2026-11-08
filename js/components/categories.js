@@ -8,9 +8,10 @@ import { CATEGORIES } from '../../data/products.js';
 
 const PLACEHOLDER_SVG = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect fill='%23EDE7DA' width='600' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23C6A45C' font-family='serif' font-size='48'%3EAurea%3C/text%3E%3C/svg%3E`;
 
-export function renderCategories() {
+export function renderCategories({ limit } = {}) {
   const mainCategories = CATEGORIES.filter(cat => !cat.isComplementary);
   const complementaryCategories = CATEGORIES.filter(cat => cat.isComplementary);
+  const featured = limit ? mainCategories.slice(0, limit) : mainCategories;
 
   return `
     <section class="section section--ivory" id="section-categorias">
@@ -20,7 +21,7 @@ export function renderCategories() {
           <p class="section__subtitle">Piezas en oro fino colombiano y diseños de distinción</p>
         </div>
         <div class="categories-grid">
-          ${mainCategories.map(cat => `
+          ${featured.map(cat => `
             <a href="#/tienda/${cat.id}" class="category-card" aria-label="Ver categoría ${cat.name}">
               <img
                 src="${cat.image}"
@@ -36,7 +37,7 @@ export function renderCategories() {
           `).join('')}
         </div>
 
-        ${complementaryCategories.length > 0 ? `
+        ${complementaryCategories.length > 0 && !limit ? `
           <div style="margin-top: 24px; text-align: center;">
             ${complementaryCategories.map(cat => `
               <a href="#/tienda/${cat.id}" class="category-card" style="max-width: 320px; margin: 0 auto;" aria-label="Ver categoría ${cat.name}">

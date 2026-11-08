@@ -128,6 +128,12 @@ export function renderCheckoutView(container) {
                   <strong>Proceso 100% seguro:</strong> Al confirmar, se generará un mensaje automático con el detalle de tus joyas.
                   Nuestro equipo de AUREA confirmará disponibilidad y te enviará los datos de pago inmediatamente.
                 </p>
+                ${!CONFIG.WHATSAPP_NUMBER || CONFIG.WHATSAPP_NUMBER === 'CONFIGURAR_NUMERO_AQUI' ? `
+                <div style="margin-top: 10px; padding: 10px 14px; background: rgba(198,164,92,0.08); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--gray-dark, #8F702E);">
+                  <strong>Atención:</strong> El número de WhatsApp de AUREA aún no está configurado. 
+                  Podrás copiar el mensaje del pedido pero deberás enviarlo manualmente.
+                </div>
+                ` : ''}
               </div>
 
               <button type="submit" class="btn btn--whatsapp btn--full" style="padding: 14px; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
@@ -424,7 +430,11 @@ function showOrderModal(order, message, isProvisional) {
   const openWaBtn = document.getElementById('btn-open-wa');
   if (openWaBtn) {
     openWaBtn.addEventListener('click', () => {
-      showToast('Abriendo WhatsApp para completar tu pedido...', 'info');
+      if (!CONFIG.WHATSAPP_NUMBER || CONFIG.WHATSAPP_NUMBER === 'CONFIGURAR_NUMERO_AQUI') {
+        showToast('Número de WhatsApp pendiente de configuración. Copia el mensaje y envíalo manualmente.', 'info');
+      } else {
+        showToast('Abriendo WhatsApp para completar tu pedido...', 'info');
+      }
     });
   }
 

@@ -53,11 +53,9 @@ export function renderFooter() {
           <div>
             <h3 class="footer__col-title">Atención al Cliente</h3>
             <ul style="list-style: none; padding: 0;">
-              <li><a href="#/tienda" class="footer__link">Guía de Tallas y Medidas</a></li>
-              <li><a href="#/tienda" class="footer__link">Cuidado de tus Joyas</a></li>
-              <li><a href="#/tienda" class="footer__link">Políticas de Envío y Devolución</a></li>
               <li><a href="#/checkout" class="footer__link">Cómo comprar por WhatsApp</a></li>
               <li><a href="#/favoritos" class="footer__link">Mis Favoritos</a></li>
+              <li><a href="#/tienda" class="footer__link">Catálogo Completo</a></li>
             </ul>
           </div>
 

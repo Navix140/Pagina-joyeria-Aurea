@@ -18,8 +18,8 @@ export function renderHomeView(container) {
     <!-- Hero Section -->
     ${renderHero()}
 
-    <!-- Categorías -->
-    ${renderCategories()}
+    <!-- Categorías destacadas (solo 6 en portada; el resto desde el catálogo) -->
+    ${renderCategories({ limit: 6 })}
 
     <!-- Productos Destacados -->
     ${renderProductSections()}

@@ -28,6 +28,7 @@ const NAV_LINKS = [
   { label: 'Tienda', href: '#/tienda' },
   { label: 'Cadenas', href: '#/tienda/cadenas' },
   { label: 'Pulseras', href: '#/tienda/pulseras' },
+  { label: 'Dijes', href: '#/tienda/dijes' },
   { label: 'Anillos', href: '#/tienda/anillos' },
   { label: 'Ofertas', href: '#/tienda/ofertas' },
 ];
