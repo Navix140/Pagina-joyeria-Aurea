@@ -43,7 +43,7 @@ El sistema está desarrollado íntegramente en Vanilla JavaScript moderno (ES Mo
   - Selector de rango de precios en Pesos Colombianos (COP).
   - Ordenamiento dinámico: Popularidad, Menor precio, Mayor precio, Novedades y Alfabético.
   - Indicadores visuales de filtros activos con eliminación en un clic.
-  - Panel lateral de filtros optimizado para dispositivos móviles.
+  - Panel lateral de filtros optimizado para dispositivos móviles, con botón de apertura/cierre en la parte superior del catálogo y cierre al hacer clic fuera del panel o al cambiar de categoría.
 
 ### Ficha de Producto y Vista Rápida
 - **Modal Interactivo**: Permite consultar especificaciones, variantes e imágenes sin abandonar la navegación.
@@ -54,7 +54,7 @@ El sistema está desarrollado íntegramente en Vanilla JavaScript moderno (ES Mo
 ### Carrito de Compras Lateral
 - Panel deslizable accesible desde cualquier vista de la tienda.
 - Control de cantidades, cálculo dinámico de subtotales y total general.
-- Indicador de beneficio para envío gratuito nacional (umbral configurable de $200.000 COP).
+- Costo de envío sujeto a confirmación al coordinar por WhatsApp (no se muestra como monto definitivo en el resumen).
 - Persistencia local mediante `localStorage` para conservar la selección del cliente al recargar la página.
 
 ### Lista de Favoritos (Wishlist)
@@ -65,8 +65,9 @@ El sistema está desarrollado íntegramente en Vanilla JavaScript moderno (ES Mo
 ### Pedidos y Checkout vía WhatsApp
 - Formulario de datos de entrega: nombre completo, teléfono de contacto, ciudad/departamento, dirección, método de pago sugerido y dedicatoria para regalo.
 - Validación de campos obligatorios en el cliente.
-- Generación automática de mensaje estructurado para WhatsApp con el resumen de piezas, subtotales, costo de envío y datos del cliente.
+- Generación automática de mensaje estructurado para WhatsApp con el resumen de piezas, subtotales y datos del cliente. El costo de envío se indica como "Por confirmar" y se coordinará directamente por WhatsApp.
 - Opción de copiado de mensaje en un clic para mayor facilidad de uso.
+- No se integra pasarela de pago ni servicios externos: el pedido se prepara y se confirma mediante conversación de WhatsApp.
 
 ---
 
@@ -161,31 +162,40 @@ npx serve . -l 8080
 Los parámetros comerciales y de catálogo se administran en dos archivos ubicados en la carpeta `data/`:
 
 ### 1. Parámetros de Marca y WhatsApp (`data/config.js`)
-Configura el número oficial de atención de tu joyería:
+Configura el número oficial de atención de tu joyería. Los valores de envío mostrados a continuación son referenciales y deben confirmarse con el administrador antes de presentarse como condiciones comerciales definitivas:
 
 ```javascript
 export const CONFIG = {
   BRAND_NAME: 'AUREA',
   BRAND_TAGLINE: 'Joyería & Accesorios',
 
-  // Número de WhatsApp con indicativo de país (57 para Colombia), sin espacios ni signos:
-  WHATSAPP_NUMBER: '573001234567',
+  // Número de WhatsApp con indicativo de país (57 para Colombia), sin espacios ni signos.
+  // Valor pendiente de configuración real: 'CONFIGURAR_NUMERO_AQUI'
+  WHATSAPP_NUMBER: 'CONFIGURAR_NUMERO_AQUI',
 
   CURRENCY: 'COP',
-  SHIPPING_COST: 12000,              // Costo de despacho estándar
-  FREE_SHIPPING_THRESHOLD: 200000,   // Monto mínimo para despacho gratuito
+
+  // Valores de referencia — ajustar según política comercial real antes de publicar:
+  SHIPPING_COST: 12000,              // Costo de despacho estándar (referencial)
+  FREE_SHIPPING_THRESHOLD: 200000,   // Monto mínimo para despacho gratuito (referencial)
 
   SOCIAL_LINKS: {
-    instagram: 'https://instagram.com/tu_cuenta',
-    facebook: 'https://facebook.com/tu_cuenta',
-    tiktok: 'https://tiktok.com/@tu_cuenta'
+    instagram: '#configurar-instagram',    // Reemplazar con URL real
+    facebook: '#configurar-facebook',      // Reemplazar con URL real
+    tiktok: '#configurar-tiktok',          // Reemplazar con URL real
+    pinterest: '#configurar-pinterest',    // Reemplazar con URL real
   },
 
   CONTACT: {
-    email: 'contacto@aurea-joyeria.com'
-  }
+    email: 'Configurar email',             // Reemplazar con email real
+    phone: 'Configurar teléfono',          // Reemplazar con teléfono real
+    address: 'Configurar dirección',       // Reemplazar con dirección real
+    city: 'Colombia',
+  },
 };
 ```
+
+⚠️ **Importante:** No presentes el envío gratuito, garantías de materiales hipoalergénicos, ni envíos a toda Colombia como condiciones confirmadas si no existen políticas comerciales verificadas. Utiliza mensajes neutrales y profesionales hasta contar con datos reales.
 
 ### 2. Catálogo de Referencias (`data/products.js`)
 Cada producto contiene la estructura de datos compatible con los filtros de la tienda:
