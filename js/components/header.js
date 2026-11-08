@@ -4,12 +4,12 @@
    Compacto, elegante y funcional.
    ============================================================ */
 
-import { CONFIG } from '../../data/config.js';
-import { CATEGORIES } from '../../data/products.js';
-import { subscribe, getCartCount } from '../store.js';
-import { getCurrentRoute, navigateTo } from '../router.js';
-import { openSearch } from './search.js';
-import { openCart } from './cart.js';
+import { CONFIG } from '../../data/config.js?v=2';
+import { CATEGORIES } from '../../data/products.js?v=2';
+import { subscribe, getCartCount } from '../store.js?v=2';
+import { getCurrentRoute, navigateTo } from '../router.js?v=2';
+import { openSearch } from './search.js?v=2';
+import { openCart } from './cart.js?v=2';
 
 /* ── SVG Icons ───────────────────────────────────────────── */
 

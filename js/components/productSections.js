@@ -4,8 +4,8 @@
    Solo productos destacados con tarjetas limpias.
    ============================================================ */
 
-import { PRODUCTS } from '../../data/products.js';
-import { renderProductCard } from './productCard.js';
+import { PRODUCTS } from '../../data/products.js?v=2';
+import { renderProductCard } from './productCard.js?v=2';
 
 /**
  * Render minimal product sections for home page.

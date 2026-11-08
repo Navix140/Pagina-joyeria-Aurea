@@ -6,10 +6,10 @@
  * ============================================================
  */
 
-import { PRODUCTS } from '../../data/products.js';
-import { formatPrice } from '../../data/config.js';
-import { addToCart, toggleFavorite, isFavorite } from '../store.js';
-import { showToast } from './toast.js';
+import { PRODUCTS } from '../../data/products.js?v=2';
+import { formatPrice } from '../../data/config.js?v=2';
+import { addToCart, toggleFavorite, isFavorite } from '../store.js?v=2';
+import { showToast } from './toast.js?v=2';
 
 const PLACEHOLDER_SVG = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect fill='%23E9E0D1' width='600' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23C6A45C' font-family='serif' font-size='48'%3EAurea%3C/text%3E%3C/svg%3E`;
 

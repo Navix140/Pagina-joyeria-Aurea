@@ -4,9 +4,9 @@
    Hero + Categorías + Productos Destacados.
    ============================================================ */
 
-import { renderHero, bindHeroEvents } from '../components/hero.js';
-import { renderCategories } from '../components/categories.js';
-import { renderProductSections, hydrateProductSections } from '../components/productSections.js';
+import { renderHero, bindHeroEvents } from '../components/hero.js?v=2';
+import { renderCategories } from '../components/categories.js?v=2';
+import { renderProductSections, hydrateProductSections } from '../components/productSections.js?v=2';
 
 export function renderHomeView(container) {
   if (!container) return;

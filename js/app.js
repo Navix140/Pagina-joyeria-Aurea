@@ -5,14 +5,14 @@
  * ============================================================
  */
 
-import { initStore } from './store.js';
-import { addRoute, setNotFound, startRouter, navigateTo } from './router.js';
-import { renderHeader, updateActiveLink } from './components/header.js';
-import { renderFooter } from './components/footer.js';
-import { renderHomeView } from './views/home.js';
-import { renderShopView } from './views/shop.js';
-import { renderFavoritesView } from './views/favorites.js';
-import { renderCheckoutView } from './views/checkout.js';
+import { initStore } from './store.js?v=2';
+import { addRoute, setNotFound, startRouter, navigateTo } from './router.js?v=2';
+import { renderHeader, updateActiveLink } from './components/header.js?v=2';
+import { renderFooter } from './components/footer.js?v=2';
+import { renderHomeView } from './views/home.js?v=2';
+import { renderShopView } from './views/shop.js?v=2';
+import { renderFavoritesView } from './views/favorites.js?v=2';
+import { renderCheckoutView } from './views/checkout.js?v=2';
 
 /**
  * Main application initialization

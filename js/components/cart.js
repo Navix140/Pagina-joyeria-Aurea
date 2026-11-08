@@ -5,13 +5,13 @@
  * ============================================================
  */
 
-import { CONFIG, formatPrice } from '../../data/config.js';
+import { CONFIG, formatPrice } from '../../data/config.js?v=2';
 import {
   getCart, getCartTotal, getCartCount,
   removeFromCart, updateQuantity, subscribe, clearCart
-} from '../store.js';
-import { navigateTo } from '../router.js';
-import { showToast } from './toast.js';
+} from '../store.js?v=2';
+import { navigateTo } from '../router.js?v=2';
+import { showToast } from './toast.js?v=2';
 
 const PLACEHOLDER_SVG = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Crect fill='%23E9E0D1' width='80' height='80'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23C6A45C' font-family='serif' font-size='14'%3EA%3C/text%3E%3C/svg%3E`;
 

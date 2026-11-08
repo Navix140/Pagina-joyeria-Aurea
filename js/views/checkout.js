@@ -4,10 +4,10 @@
    Formulario de entrega limpio y resumen de pedido elegante.
    ============================================================ */
 
-import { CONFIG, formatPrice, getWhatsAppURL } from '../../data/config.js';
-import { getCart, getCartTotal, getCartCount, clearCart } from '../store.js';
-import { closeCart } from '../components/cart.js';
-import { showToast } from '../components/toast.js';
+import { CONFIG, formatPrice, getWhatsAppURL } from '../../data/config.js?v=2';
+import { getCart, getCartTotal, getCartCount, clearCart } from '../store.js?v=2';
+import { closeCart } from '../components/cart.js?v=2';
+import { showToast } from '../components/toast.js?v=2';
 
 function escapeHTML(str) {
   if (!str) return '';

@@ -6,9 +6,9 @@
  * ============================================================
  */
 
-import { PRODUCTS } from '../../data/products.js';
-import { getFavorites, subscribe } from '../store.js';
-import { renderProductCard } from '../components/productCard.js';
+import { PRODUCTS } from '../../data/products.js?v=2';
+import { getFavorites, subscribe } from '../store.js?v=2';
+import { renderProductCard } from '../components/productCard.js?v=2';
 
 let unsubscribeStore = null;
 

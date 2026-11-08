@@ -4,9 +4,9 @@
    Catálogo filtrable con diseño limpio y moderno.
    ============================================================ */
 
-import { PRODUCTS, CATEGORIES } from '../../data/products.js';
-import { CONFIG, formatPrice } from '../../data/config.js';
-import { renderProductCard } from '../components/productCard.js';
+import { PRODUCTS, CATEGORIES } from '../../data/products.js?v=2';
+import { CONFIG, formatPrice } from '../../data/config.js?v=2';
+import { renderProductCard } from '../components/productCard.js?v=2';
 
 let activeCategory = 'todas';
 let activeSubcategory = '';

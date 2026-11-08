@@ -4,8 +4,8 @@
    Limpio, elegante y organizado.
    ============================================================ */
 
-import { CONFIG } from '../../data/config.js';
-import { CATEGORIES } from '../../data/products.js';
+import { CONFIG } from '../../data/config.js?v=2';
+import { CATEGORIES } from '../../data/products.js?v=2';
 
 export function renderFooter() {
   const root = document.getElementById('footer-root');
