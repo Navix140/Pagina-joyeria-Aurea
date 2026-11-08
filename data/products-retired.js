@@ -119,4 +119,48 @@ export const RETIRED_PRODUCTS = [
   },
 ];
 
+  {
+    id: 29,
+    name: 'Dije Cruz ClÃ¡sica',
+    category: 'dijes',
+    subcategory: null,
+    goldType: 'nacional',
+    price: 140000,
+    oldPrice: 160000,
+    description: 'Cruz tubular pulida de proporciones sobrias y diseÃ±o atemporal para portar con cadenas delgadas o medianas.',
+    material: 'Oro nacional, quilataje por confirmar',
+    availability: 'En stock',
+    tags: ['clasico'],
+    variants: ['25 mm x 15 mm'],
+    images: [
+      'assets/images/products/prod-29-dije-cruz-clasica.jpg',
+    ],
+    popularity: 89,
+    dateAdded: '2026-10-09',
+    retiredReason: 'Fotografía pendiente de verificación por el propietario',
+    retiredDate: '2026-11-08',
+  },
+  {
+    id: 31,
+    name: 'Dije CorazÃ³n Pulido',
+    category: 'dijes',
+    subcategory: null,
+    goldType: 'nacional',
+    price: 130000,
+    oldPrice: 145000,
+    description: 'Silueta de corazÃ³n abombado con pulido brillante que aporta luminosidad y un mensaje afectivo y romÃ¡ntico.',
+    material: 'Oro nacional, quilataje por confirmar',
+    availability: 'En stock',
+    tags: ['romantico'],
+    variants: ['15 mm'],
+    images: [
+      'assets/images/products/prod-31-dije-corazon-pulido.jpg',
+    ],
+    popularity: 82,
+    dateAdded: '2026-10-17',
+    retiredReason: 'Fotografía pendiente de verificación por el propietario',
+    retiredDate: '2026-11-08',
+  },
+];
+
 export const RETIRED_PRODUCT_IDS = RETIRED_PRODUCTS.map(p => p.id);

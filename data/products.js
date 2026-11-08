@@ -6,8 +6,8 @@
  * 
  * NOTA DEL CATÃLOGO:
  * - CatÃ¡logo de referencia inspirado en la joyerÃ­a y orfebrerÃ­a
- *   tradicional colombiana (33 referencias comerciales activas).
- * - 5 referencias retiradas por coherencia fotográfica; consultar
+ *   tradicional colombiana (31 referencias comerciales activas).
+ * - 7 referencias retiradas por coherencia fotográfica; consultar
  *   data/products-retired.js para el respaldo completo.
  * - Precios de referencia en pesos colombianos (COP).
  * - Precios, materiales y disponibilidad sujetos a confirmaciÃ³n
@@ -590,25 +590,7 @@ export const PRODUCTS = [
     popularity: 91,
     dateAdded: '2026-10-07',
   },
-  {
-    id: 29,
-    name: 'Dije Cruz ClÃ¡sica',
-    category: 'dijes',
-    subcategory: null,
-    goldType: 'nacional',
-    price: 140000,
-    oldPrice: 160000,
-    description: 'Cruz tubular pulida de proporciones sobrias y diseÃ±o atemporal para portar con cadenas delgadas o medianas.',
-    material: 'Oro nacional, quilataje por confirmar',
-    availability: 'En stock',
-    tags: ['clasico'],
-    variants: ['25 mm x 15 mm'],
-    images: [
-      'assets/images/products/prod-29-dije-cruz-clasica.jpg',
-    ],
-    popularity: 89,
-    dateAdded: '2026-10-09',
-  },
+
   {
     id: 30,
     name: 'Dije Medalla Milagrosa',
@@ -628,25 +610,7 @@ export const PRODUCTS = [
     popularity: 84,
     dateAdded: '2026-10-13',
   },
-  {
-    id: 31,
-    name: 'Dije CorazÃ³n Pulido',
-    category: 'dijes',
-    subcategory: null,
-    goldType: 'nacional',
-    price: 130000,
-    oldPrice: 145000,
-    description: 'Silueta de corazÃ³n abombado con pulido brillante que aporta luminosidad y un mensaje afectivo y romÃ¡ntico.',
-    material: 'Oro nacional, quilataje por confirmar',
-    availability: 'En stock',
-    tags: ['romantico'],
-    variants: ['15 mm'],
-    images: [
-      'assets/images/products/prod-31-dije-corazon-pulido.jpg',
-    ],
-    popularity: 82,
-    dateAdded: '2026-10-17',
-  },
+
 
   // ==========================================
   // 9. ANILLOS (4 referencias)
