@@ -73,20 +73,41 @@ El sistema está desarrollado íntegramente en Vanilla JavaScript moderno (ES Mo
 
 ## Estructura del Catálogo
 
-El catálogo de AUREA se organiza en 10 categorías temáticas con 38 referencias comerciales de orfebrería nacional:
+El catálogo de AUREA se organiza en 10 categorías temáticas con 31 referencias comerciales activas de orfebrería nacional.
+7 referencias fueron retiradas por coherencia fotográfica; su información completa se conserva en `data/products-retired.js` para posible recuperación.
 
-| Categoría | Slug | Tipo / Subcategorías | Descripción |
-| :--- | :--- | :--- | :--- |
-| **Manillas tejidas** | `manillas-tejidas` | Macramé artesanal | Diseños en hilo trenzado con balines, medallas y placas en oro |
-| **Pulseras** | `pulseras` | `balines`, `diamantadas`, `lisas` | Modelos de esferas doradas, tejidos helicoidales y cañas esclavas |
-| **Pulsos** | `pulsos` | Estructuras rígidas y eslabones | Piezas de media caña, tejido Fígaro y eslabones tradicionales |
-| **Aretes tradicionales** | `aretes-tradicionales` | Candongas y colgantes | Aros circulares lisos, grabados diamantados y gotas elegantes |
-| **Topitos** | `topitos` | Broche mariposa a presión | Bolitas clásicas, circonia suiza y filigrana tradicional |
-| **Cadenas** | `cadenas` | Oro nacional (`goldType: 'nacional'`) | Tejidos Cartier, Fígaro 3x1, Singapur, barbada, espartillo, chinesca y espejo |
-| **Joyería** | `joyeria` | Oro nacional (`goldType: 'nacional'`) | Rosarios clásicos, camándulas devocionales y gargantillas de gala |
-| **Dijes** | `dijes` | Medallas y figuras | Virgen María, San Benito, cruz clásica, milagrosa, corazón e iniciales |
-| **Anillos** | `anillos` | Solitarios y argollas | Solitario clásico, anillo sello, gema verde estilo esmeralda y alianzas |
-| **Tobilleras** *(Complementaria)* | `tobilleras` | Cadenas finas de tobillo | Modelos sutiles con balines y dijes colgantes |
+| Categoría | Slug | Referencias activas | Tipo / Subcategorías | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **Manillas tejidas** | `manillas-tejidas` | 4 | Macramé artesanal | Diseños en hilo trenzado con balines, medallas y placas en oro |
+| **Pulseras** | `pulseras` | 2 | `balines`, `diamantadas`, `lisas` | Modelos de esferas doradas, tejidos helicoidales y cañas esclavas |
+| **Pulsos** | `pulsos` | 3 | Estructuras rígidas y eslabones | Piezas de media caña, tejido Fígaro y eslabones tradicionales |
+| **Aretes tradicionales** | `aretes-tradicionales` | 2 | Candongas y colgantes | Aros circulares lisos, grabados diamantados y gotas elegantes |
+| **Topitos** | `topitos` | 3 | Broche mariposa a presión | Bolitas clásicas, circonia suiza y filigrana tradicional |
+| **Cadenas** | `cadenas` | 7 | Oro nacional (`goldType: 'nacional'`) | Tejidos Cartier, Fígaro 3x1, Singapur, barbada, espartillo, chinesca y espejo |
+| **Joyería** | `joyeria` | 2 | Oro nacional (`goldType: 'nacional'`) | Rosarios clásicos, camándulas devocionales y gargantillas de gala |
+| **Dijes** | `dijes` | 4 | Medallas y figuras | Virgen María, San Benito, cruz clásica, milagrosa, corazón e iniciales |
+| **Anillos** | `anillos` | 4 | Solitarios y argollas | Solitario clásico, anillo sello, gema verde estilo esmeralda y alianzas |
+| **Tobilleras** *(Complementaria)* | `tobilleras` | 1 | Cadenas finas de tobillo | Modelos sutiles con balines y dijes colgantes |
+| **Total** | | **31** | | |
+
+---
+
+## Archivos de respaldo y documentación
+
+- **`data/products-retired.js`**: Respaldo de las 7 referencias retiradas del catálogo activo por coherencia fotográfica. Incluye motivo y fecha de retiro.
+- **`data/products-legacy.js`**: Copia de seguridad completa del catálogo original (38 productos) antes de cualquier depuración.
+- **`data/fotografias-pendientes.js`**: Registro de los 31 productos activos con estado de verificación fotográfica. Pendiente de revisión visual por el propietario.
+
+---
+
+## Correcciones técnicas aplicadas
+
+- **Checkout**: El carrito lateral se cierra al entrar al checkout (ya no tapa el formulario de entrega). El resumen muestra envío y total reales, coherentes con el carrito.
+- **Codificación UTF-8**: Reparada doble codificación (mojibake) en archivos de datos; acentos y ñ leen correctamente.
+- **Módulo JS**: Eliminado byte BOM corrupto al inicio de `data/products.js` que impedía la carga del módulo.
+- **Caché de navegador**: Todas las importaciones de módulos ES versionadas con `?v=2` para forzar descarga de versiones actualizadas.
+- **Hero**: Fallback de imagen de categoría si la imagen principal falla (ya no se oculta completamente).
+- **Checkout**: Campos con `autocomplete` para mejorar UX en dispositivos móviles.
 
 ---
 
@@ -162,7 +183,7 @@ npx serve . -l 8080
 Los parámetros comerciales y de catálogo se administran en dos archivos ubicados en la carpeta `data/`:
 
 ### 1. Parámetros de Marca y WhatsApp (`data/config.js`)
-Configura el número oficial de atención de tu joyería. Los valores de envío mostrados a continuación son referenciales y deben confirmarse con el administrador antes de presentarse como condiciones comerciales definitivas:
+⚠️ **REFERENCIA:** El número de WhatsApp aún no está configurado. `WHATSAPP_NUMBER` está como `'CONFIGURAR_NUMERO_AQUI'`. El propietario debe reemplazarlo con el número real de AUREA (formato: 573001234567, sin espacios ni signos) para que los pedidos puedan enviarse realmente.
 
 ```javascript
 export const CONFIG = {
@@ -170,7 +191,7 @@ export const CONFIG = {
   BRAND_TAGLINE: 'Joyería & Accesorios',
 
   // Número de WhatsApp con indicativo de país (57 para Colombia), sin espacios ni signos.
-  // Valor pendiente de configuración real: 'CONFIGURAR_NUMERO_AQUI'
+  // ⚠️ REFERENCIA — aún no hay número real asignado.
   WHATSAPP_NUMBER: 'CONFIGURAR_NUMERO_AQUI',
 
   CURRENCY: 'COP',
@@ -236,6 +257,22 @@ El proyecto es totalmente estático, por lo que puede alojarse de forma directa 
 1. Conecta el repositorio de GitHub en el panel de Vercel o Netlify.
 2. No requiere comando de compilación (Build Command) ni carpeta de salida (Output Directory).
 3. Selecciona **Deploy**.
+
+---
+
+## Evaluación de pasarelas de pago (pendiente de integración)
+
+El modelo de pago actual es **por WhatsApp**: el checkout prepara un mensaje estructurado con el resumen del pedido y los datos del cliente, listo para enviarse. No se integra pasarela de pago en línea.
+
+Se evaluaron tres pasarelas para futura integración (solo evaluación, sin implementar):
+
+| Pasarela | Disponibilidad Colombia | Ambiente pruebas | Webhooks | Estado |
+|----------|------------------------|------------------|----------|--------|
+| Wompi | ✅ Sí | ✅ Sí (sandbox) | ✅ Sí | Pendiente de credenciales |
+| Mercado Pago | ✅ Sí | ✅ Sí (sandbox) | ✅ Sí | Pendiente de credenciales |
+| ePayco | ✅ Sí | ✅ Sí (pruebas) | ✅ Sí | Pendiente de credenciales |
+
+**Arquitectura recomendada (no implementada):** Funciones serverless en Vercel para albergar claves privadas **únicamente en servidor**, con variables de entorno, webhooks para confirmar estado real de transacción, y verificación de montos desde el servidor. No integrar hasta que el propietario disponga de cuenta comercial y credenciales.
 
 ---
 
