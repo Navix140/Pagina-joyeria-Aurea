@@ -447,6 +447,25 @@ p { margin-bottom: 1rem; }
 .modal__fav-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; }
 
 /* ============================================================
+   CART SIDEBAR — Panel lateral del carrito de compras
+   ============================================================ */
+.cart-backdrop {
+  position: fixed; inset: 0; z-index: 1500;
+  background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);
+  opacity: 0; visibility: hidden; transition: opacity var(--transition), visibility var(--transition);
+}
+.cart-backdrop--open { opacity: 1; visibility: visible; }
+
+.cart-sidebar {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 1510;
+  width: 420px; max-width: 100vw; background: var(--white);
+  transform: translateX(100%); transition: transform var(--transition);
+  box-shadow: -10px 0 40px rgba(0,0,0,0.12); display: flex; flex-direction: column;
+  overflow-y: auto; border-left: 1px solid var(--border);
+}
+.cart-sidebar--open { transform: translateX(0); }
+
+/* ============================================================
    SHOP / CATALOG
    ============================================================ */
 .shop { padding-top: 24px; }
