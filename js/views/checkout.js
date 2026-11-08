@@ -69,6 +69,7 @@ export function renderCheckoutView(container) {
                 <input
                   type="text" id="order-name" class="checkout__input"
                   placeholder="Ej: Carolina Martínez" required
+                  autocomplete="name"
                 />
                 <div class="checkout__error-msg" id="error-order-name" style="display: none;">Por favor ingresa tu nombre</div>
               </div>
@@ -80,6 +81,7 @@ export function renderCheckoutView(container) {
                 <input
                   type="tel" id="order-phone" class="checkout__input"
                   placeholder="Ej: 300 123 4567" required
+                  autocomplete="tel"
                 />
                 <div class="checkout__error-msg" id="error-order-phone" style="display: none;">Por favor ingresa un número válido</div>
               </div>
@@ -91,6 +93,7 @@ export function renderCheckoutView(container) {
                 <input
                   type="text" id="order-city" class="checkout__input"
                   placeholder="Ej: Medellín, Antioquia" required
+                  autocomplete="address-level2"
                 />
                 <div class="checkout__error-msg" id="error-order-city" style="display: none;">Por favor ingresa ciudad y departamento</div>
               </div>
@@ -102,6 +105,7 @@ export function renderCheckoutView(container) {
                 <input
                   type="text" id="order-address" class="checkout__input"
                   placeholder="Ej: Calle 10 # 20-30 Apto 402" required
+                  autocomplete="address-line1"
                 />
                 <div class="checkout__error-msg" id="error-order-address" style="display: none;">Por favor ingresa tu dirección</div>
               </div>

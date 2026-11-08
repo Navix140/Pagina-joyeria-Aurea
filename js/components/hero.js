@@ -13,7 +13,7 @@ export function renderHero() {
           alt="Cadena de oro nacional eslabón Cartier"
           class="hero__bg-img"
           loading="eager"
-          onerror="this.style.display='none'"
+          onerror="this.src='assets/images/categories/cat-cadenas.jpg'"
         />
         <div class="hero__overlay"></div>
       </div>
