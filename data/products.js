@@ -1,19 +1,19 @@
-﻿/**
+?/**
  * ============================================================
- * AUREA â€” JoyerÃ­a & Accesorios
- * CatÃ¡logo de JoyerÃ­a Colombiana (Etapa 5)
+ * AUREA — Joyería & Accesorios
+ * Catálogo de Joyería Colombiana (Etapa 5)
  * ============================================================
  * 
- * NOTA DEL CATÃLOGO:
- * - CatÃ¡logo de referencia inspirado en la joyerÃ­a y orfebrerÃ­a
+ * NOTA DEL CATÁLOGO:
+ * - Catálogo de referencia inspirado en la joyería y orfebrería
  *   tradicional colombiana (31 referencias comerciales activas).
- * - 7 referencias retiradas por coherencia fotográfica; consultar
+ * - 7 referencias retiradas por coherencia fotogr�fica; consultar
  *   data/products-retired.js para el respaldo completo.
  * - Precios de referencia en pesos colombianos (COP).
- * - Precios, materiales y disponibilidad sujetos a confirmaciÃ³n
+ * - Precios, materiales y disponibilidad sujetos a confirmación
  *   directa por WhatsApp.
- * - ClasificaciÃ³n de orfebrerÃ­a nacional (goldType: 'nacional').
- * - SubcategorÃ­as definidas para la colecciÃ³n de pulseras:
+ * - Clasificación de orfebrería nacional (goldType: 'nacional').
+ * - Subcategorías definidas para la colección de pulseras:
  *   balines, diamantadas y lisas.
  * ============================================================
  */
@@ -22,13 +22,13 @@ export const CATEGORIES = [
   {
     id: 'manillas-tejidas',
     name: 'Manillas Tejidas',
-    description: 'ArtesanÃ­a colombiana tejida a mano con detalles en oro',
+    description: 'Artesanía colombiana tejida a mano con detalles en oro',
     image: 'assets/images/categories/cat-manillas-tejidas.jpg',
   },
   {
     id: 'pulseras',
     name: 'Pulseras',
-    description: 'DiseÃ±os de balines, diamantadas y terminaciones lisas',
+    description: 'Diseños de balines, diamantadas y terminaciones lisas',
     image: 'assets/images/categories/cat-pulseras.jpg',
   },
   {
@@ -40,7 +40,7 @@ export const CATEGORIES = [
   {
     id: 'aretes-tradicionales',
     name: 'Aretes Tradicionales',
-    description: 'Aros y candongas clÃ¡sicas que enmarcan tu rostro',
+    description: 'Aros y candongas clásicas que enmarcan tu rostro',
     image: 'assets/images/categories/cat-aretes-tradicionales.jpg',
   },
   {
@@ -57,26 +57,26 @@ export const CATEGORIES = [
   },
   {
     id: 'joyeria',
-    name: 'JoyerÃ­a',
+    name: 'Joyería',
     description: 'Creaciones exclusivas en oro nacional e italiano',
     image: 'assets/images/categories/cat-joyeria.jpg',
   },
   {
     id: 'dijes',
     name: 'Dijes',
-    description: 'Medallas, figuras y sÃ­mbolos para personalizar tus cadenas',
+    description: 'Medallas, figuras y símbolos para personalizar tus cadenas',
     image: 'assets/images/categories/cat-dijes.jpg',
   },
   {
     id: 'anillos',
     name: 'Anillos',
-    description: 'SÃ­mbolos atemporales de distinciÃ³n y estilo',
+    description: 'Símbolos atemporales de distinción y estilo',
     image: 'assets/images/categories/cat-anillos.jpg',
   },
   {
     id: 'tobilleras',
     name: 'Tobilleras',
-    description: 'ColecciÃ³n complementaria con un toque sutil de distinciÃ³n',
+    description: 'Colección complementaria con un toque sutil de distinción',
     image: 'assets/images/categories/cat-tobilleras.jpg',
     isComplementary: true,
   },
@@ -94,8 +94,8 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 95000,
     oldPrice: 115000,
-    description: 'Tejido artesanal macramÃ© en hilo negro con balines diamantados en oro nacional. DiseÃ±o ajustable de uso diario con gran significado y protecciÃ³n.',
-    material: 'Oro nacional, quilataje por confirmar. CordÃ³n encerado de alta resistencia.',
+    description: 'Tejido artesanal macramé en hilo negro con balines diamantados en oro nacional. Diseño ajustable de uso diario con gran significado y protección.',
+    material: 'Oro nacional, quilataje por confirmar. Cordón encerado de alta resistencia.',
     availability: 'En stock',
     tags: ['nuevo', 'mas-vendido'],
     variants: ['Ajustable standard', 'Ajustable juvenil'],
@@ -113,8 +113,8 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 95000,
     oldPrice: null,
-    description: 'Tradicional manilla roja con tejido de nudo corredizo y balines en oro nacional. Un amuleto clÃ¡sico de protecciÃ³n y estilo atemporal.',
-    material: 'Oro nacional, quilataje por confirmar. Hilo macramÃ© rojo impermeable.',
+    description: 'Tradicional manilla roja con tejido de nudo corredizo y balines en oro nacional. Un amuleto clásico de protección y estilo atemporal.',
+    material: 'Oro nacional, quilataje por confirmar. Hilo macramé rojo impermeable.',
     availability: 'En stock',
     tags: ['mas-vendido'],
     variants: ['Ajustable standard'],
@@ -132,8 +132,8 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 145000,
     oldPrice: 165000,
-    description: 'EmblemÃ¡tica medalla de San Benito con acabado en relieve montada sobre tejido macramÃ© artesanal en hilo negro de mÃ¡xima durabilidad.',
-    material: 'Oro nacional, quilataje por confirmar. CordÃ³n artesanal encerado.',
+    description: 'Emblemática medalla de San Benito con acabado en relieve montada sobre tejido macramé artesanal en hilo negro de máxima durabilidad.',
+    material: 'Oro nacional, quilataje por confirmar. Cordón artesanal encerado.',
     availability: 'En stock',
     tags: ['nuevo'],
     variants: ['Ajustable standard'],
@@ -151,7 +151,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 165000,
     oldPrice: null,
-    description: 'Placa lisa de oro nacional apta para grabado de nombre o fecha especial sobre cordÃ³n tejido reforzado con nudo ajustable.',
+    description: 'Placa lisa de oro nacional apta para grabado de nombre o fecha especial sobre cordón tejido reforzado con nudo ajustable.',
     material: 'Oro nacional, quilataje por confirmar. Hilo reforzado de alta tenacidad.',
     availability: 'En stock',
     tags: ['personalizable'],
@@ -164,7 +164,7 @@ export const PRODUCTS = [
   },
 
   // ==========================================
-  // 2. PULSERAS (3 referencias con subcategorÃ­as)
+  // 2. PULSERAS (3 referencias con subcategorías)
   // ==========================================
   {
     id: 5,
@@ -194,7 +194,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 380000,
     oldPrice: 420000,
-    description: 'Pulsera de perfil continuo y pulido espejo, elegante y versÃ¡til para lucir en solitario o combinar con reloj y otras piezas.',
+    description: 'Pulsera de perfil continuo y pulido espejo, elegante y versátil para lucir en solitario o combinar con reloj y otras piezas.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['elegante'],
@@ -211,17 +211,17 @@ export const PRODUCTS = [
   // ==========================================
   {
     id: 8,
-    name: 'Pulso de CaÃ±a RÃ­gida en Oro',
+    name: 'Pulso de Caña Rígida en Oro',
     category: 'pulsos',
     subcategory: null,
     goldType: 'nacional',
     price: 420000,
     oldPrice: 470000,
-    description: 'Brazalete rÃ­gido de media caÃ±a con acabado reluciente, bisagra oculta y broche de ocho de seguridad para porte elegante.',
+    description: 'Brazalete rígido de media caña con acabado reluciente, bisagra oculta y broche de ocho de seguridad para porte elegante.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['destacado'],
-    variants: ['6.0 cm de diÃ¡metro', '6.5 cm de diÃ¡metro'],
+    variants: ['6.0 cm de diámetro', '6.5 cm de diámetro'],
     images: [
       'assets/images/products/prod-08-pulso-cana-rigida.jpg',
     ],
@@ -230,13 +230,13 @@ export const PRODUCTS = [
   },
   {
     id: 9,
-    name: 'Pulso Tejido FÃ­garo',
+    name: 'Pulso Tejido Fígaro',
     category: 'pulsos',
     subcategory: null,
     goldType: 'nacional',
     price: 340000,
     oldPrice: null,
-    description: 'Cadencia rÃ­tmica de eslabones alternados 3x1 de calibre intermedio, ideal para un porte distinguido tanto formal como casual.',
+    description: 'Cadencia rítmica de eslabones alternados 3x1 de calibre intermedio, ideal para un porte distinguido tanto formal como casual.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['mas-vendido'],
@@ -249,13 +249,13 @@ export const PRODUCTS = [
   },
   {
     id: 10,
-    name: 'Pulso de Eslabones ClÃ¡sicos',
+    name: 'Pulso de Eslabones Clásicos',
     category: 'pulsos',
     subcategory: null,
     goldType: 'nacional',
     price: 360000,
     oldPrice: 395000,
-    description: 'Estructura tradicional de eslabones pulidos entrelazados con caÃ­da dÃ³cil y broche perico reforzado de alta seguridad.',
+    description: 'Estructura tradicional de eslabones pulidos entrelazados con caída dócil y broche perico reforzado de alta seguridad.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['clasico'],
@@ -278,7 +278,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 180000,
     oldPrice: null,
-    description: 'Aros clÃ¡sicos de silueta circular con tubo ligero y pulido satinado brillante. Cierre pasador seguro y gran comodidad.',
+    description: 'Aros clásicos de silueta circular con tubo ligero y pulido satinado brillante. Cierre pasador seguro y gran comodidad.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['mas-vendido'],
@@ -297,7 +297,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 210000,
     oldPrice: 235000,
-    description: 'Aretes circulares con grabado diamantado perimetral que acentÃºa su brillo con toques artesanales de gran vistosidad.',
+    description: 'Aretes circulares con grabado diamantado perimetral que acentúa su brillo con toques artesanales de gran vistosidad.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['nuevo'],
@@ -314,13 +314,13 @@ export const PRODUCTS = [
   // ==========================================
   {
     id: 14,
-    name: 'Topitos de Bolita ClÃ¡sicos',
+    name: 'Topitos de Bolita Clásicos',
     category: 'topitos',
     subcategory: null,
     goldType: 'nacional',
     price: 85000,
     oldPrice: 95000,
-    description: 'Par de esferas doradas con broche mariposa a presiÃ³n. La joya esencial, cÃ³moda y segura para todas las edades.',
+    description: 'Par de esferas doradas con broche mariposa a presión. La joya esencial, cómoda y segura para todas las edades.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['esencial', 'mas-vendido'],
@@ -340,7 +340,7 @@ export const PRODUCTS = [
     price: 110000,
     oldPrice: null,
     description: 'Bisel de oro nacional engastando una circonia facetada de corte brillante suizo con destello semejante al diamante.',
-    material: 'Oro nacional, quilataje por confirmar. Circonia cÃºbica de alta refracciÃ³n.',
+    material: 'Oro nacional, quilataje por confirmar. Circonia cúbica de alta refracción.',
     availability: 'En stock',
     tags: ['brillo'],
     variants: ['4 mm', '5 mm'],
@@ -352,17 +352,17 @@ export const PRODUCTS = [
   },
   {
     id: 16,
-    name: 'Topitos con DiseÃ±o Tradicional',
+    name: 'Topitos con Diseño Tradicional',
     category: 'topitos',
     subcategory: null,
     goldType: 'nacional',
     price: 125000,
     oldPrice: 140000,
-    description: 'Silueta floral y filigrana tradicional con centro pulido y broche mariposa reforzado de fabricaciÃ³n nacional.',
+    description: 'Silueta floral y filigrana tradicional con centro pulido y broche mariposa reforzado de fabricación nacional.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['nuevo'],
-    variants: ['EstÃ¡ndar 6 mm'],
+    variants: ['Estándar 6 mm'],
     images: [
       'assets/images/products/prod-16-topitos-diseno-tradicional.jpg',
     ],
@@ -381,7 +381,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 390000,
     oldPrice: 430000,
-    description: 'EslabÃ³n Cartier con alternancia equilibrada de secciÃ³n alargada y redonda. Un clÃ¡sico absoluto de la joyerÃ­a nacional.',
+    description: 'Eslabón Cartier con alternancia equilibrada de sección alargada y redonda. Un clásico absoluto de la joyería nacional.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['mas-vendido'],
@@ -394,13 +394,13 @@ export const PRODUCTS = [
   },
   {
     id: 18,
-    name: 'Cadena Tejido FÃ­garo 3x1 en Oro Nacional',
+    name: 'Cadena Tejido Fígaro 3x1 en Oro Nacional',
     category: 'cadenas',
     subcategory: null,
     goldType: 'nacional',
     price: 370000,
     oldPrice: null,
-    description: 'PatrÃ³n clÃ¡sico de 3 eslabones cortos por 1 eslabÃ³n alargado en oro nacional brillante con broche marinero de calidad.',
+    description: 'Patrón clásico de 3 eslabones cortos por 1 eslabón alargado en oro nacional brillante con broche marinero de calidad.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['clasico'],
@@ -419,7 +419,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 320000,
     oldPrice: 355000,
-    description: 'Tejido entrelazado helicoidal con cortes diamantados que reflejan destellos vivos en cualquier Ã¡ngulo de luz.',
+    description: 'Tejido entrelazado helicoidal con cortes diamantados que reflejan destellos vivos en cualquier ángulo de luz.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['nuevo'],
@@ -457,7 +457,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 340000,
     oldPrice: 380000,
-    description: 'Tejido tubular flexible popularmente llamado cola de ratÃ³n o espiga, de tacto suave, sedoso y brillo pulido ininterrumpido.',
+    description: 'Tejido tubular flexible popularmente llamado cola de ratón o espiga, de tacto suave, sedoso y brillo pulido ininterrumpido.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['fino'],
@@ -476,7 +476,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 410000,
     oldPrice: null,
-    description: 'Tejido artesanal elaborado con textura de doble trama y notable presencia visual, caracterÃ­stico de los talleres orfebres.',
+    description: 'Tejido artesanal elaborado con textura de doble trama y notable presencia visual, característico de los talleres orfebres.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['artesanal'],
@@ -495,7 +495,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 330000,
     oldPrice: 365000,
-    description: 'LÃ¡minas ultrabrillantes con terminaciÃ³n pulida que simulan una cinta dorada reflectante sobre la piel con gran impacto visual.',
+    description: 'Láminas ultrabrillantes con terminación pulida que simulan una cinta dorada reflectante sobre la piel con gran impacto visual.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['nuevo'],
@@ -508,17 +508,17 @@ export const PRODUCTS = [
   },
 
   // ==========================================
-  // 7. JOYERÃA (3 referencias - goldType: 'nacional')
+  // 7. JOYERÍA (3 referencias - goldType: 'nacional')
   // ==========================================
   {
     id: 24,
-    name: 'Rosario ClÃ¡sico en Oro Nacional',
+    name: 'Rosario Clásico en Oro Nacional',
     category: 'joyeria',
     subcategory: null,
     goldType: 'nacional',
     price: 490000,
     oldPrice: 550000,
-    description: 'Rosario devocional con cuentas de balines calibrados, centro mariano labrado y crucifijo de orfebrerÃ­a en oro nacional.',
+    description: 'Rosario devocional con cuentas de balines calibrados, centro mariano labrado y crucifijo de orfebrería en oro nacional.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['devocional', 'destacado'],
@@ -554,13 +554,13 @@ export const PRODUCTS = [
   // ==========================================
   {
     id: 27,
-    name: 'Dije Virgen MarÃ­a en Oro',
+    name: 'Dije Virgen María en Oro',
     category: 'dijes',
     subcategory: null,
     goldType: 'nacional',
     price: 160000,
     oldPrice: 185000,
-    description: 'Medalla con silueta en relieve de la Virgen MarÃ­a con orla diamantada y pasador amplio para diversas cadenas.',
+    description: 'Medalla con silueta en relieve de la Virgen María con orla diamantada y pasador amplio para diversas cadenas.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['devocional', 'mas-vendido'],
@@ -579,7 +579,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 175000,
     oldPrice: null,
-    description: 'Tradicional medalla de protecciÃ³n con doble faz grabada y marco exterior pulido en oro nacional.',
+    description: 'Tradicional medalla de protección con doble faz grabada y marco exterior pulido en oro nacional.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['proteccion'],
@@ -599,7 +599,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 155000,
     oldPrice: null,
-    description: 'Medalla ovalada con la advocaciÃ³n de la Virgen de la Medalla Milagrosa labrada con alta fidelidad y delicadeza.',
+    description: 'Medalla ovalada con la advocación de la Virgen de la Medalla Milagrosa labrada con alta fidelidad y delicadeza.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['devocional'],
@@ -617,13 +617,13 @@ export const PRODUCTS = [
   // ==========================================
   {
     id: 33,
-    name: 'Anillo Solitario ClÃ¡sico',
+    name: 'Anillo Solitario Clásico',
     category: 'anillos',
     subcategory: null,
     goldType: 'nacional',
     price: 290000,
     oldPrice: 320000,
-    description: 'Montura de cuatro uÃ±as que eleva una circonia corte brillante central sobre banda estilizada de oro pulido.',
+    description: 'Montura de cuatro uñas que eleva una circonia corte brillante central sobre banda estilizada de oro pulido.',
     material: 'Oro nacional, quilataje por confirmar. Circonia de brillo superior.',
     availability: 'En stock',
     tags: ['compromiso', 'mas-vendido'],
@@ -642,7 +642,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 360000,
     oldPrice: 410000,
-    description: 'Mesa plana pulida con hombros labrados en relieve, pieza de gran presencia y carÃ¡cter para porte formal.',
+    description: 'Mesa plana pulida con hombros labrados en relieve, pieza de gran presencia y carácter para porte formal.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['caballero'],
@@ -661,7 +661,7 @@ export const PRODUCTS = [
     goldType: 'nacional',
     price: 340000,
     oldPrice: 380000,
-    description: 'Montura de cuatro uÃ±as con detalle central en oro pulido, diseÃ±o sobrio y elegante para uso diario o ocasiones especiales.',
+    description: 'Montura de cuatro uñas con detalle central en oro pulido, diseño sobrio y elegante para uso diario o ocasiones especiales.',
     material: 'Oro nacional, quilataje por confirmar.',
     availability: 'En stock',
     tags: ['nuevo'],
@@ -674,13 +674,13 @@ export const PRODUCTS = [
   },
   {
     id: 36,
-    name: 'Argolla ClÃ¡sica de Matrimonio',
+    name: 'Argolla Clásica de Matrimonio',
     category: 'anillos',
     subcategory: null,
     goldType: 'nacional',
     price: 280000,
     oldPrice: null,
-    description: 'Banda media caÃ±a con acabado confort interno y brillo espejo perimetral, sÃ­mbolo imperecedero de uniÃ³n.',
+    description: 'Banda media caña con acabado confort interno y brillo espejo perimetral, símbolo imperecedero de unión.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['matrimonio', 'esencial'],
@@ -693,7 +693,7 @@ export const PRODUCTS = [
   },
 
   // ==========================================
-  // 10. TOBILLERAS (CategorÃ­a complementaria - 2 referencias)
+  // 10. TOBILLERAS (Categoría complementaria - 2 referencias)
   // ==========================================
   {
     id: 37,
@@ -707,7 +707,7 @@ export const PRODUCTS = [
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['verano', 'delicado'],
-    variants: ['23 cm + 3 cm extensiÃ³n'],
+    variants: ['23 cm + 3 cm extensión'],
     images: [
       'assets/images/products/prod-37-tobillera-cadena-fina-balines.jpg',
     ],

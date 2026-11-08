@@ -1,13 +1,13 @@
 /**
  * ============================================================
- * AUREA ‚Äî Productos retirados del cat√°logo activo (Etapa 2)
+ * AUREA ó Productos retirados del cat·logo activo (Etapa 2)
  * ============================================================
  * RESPALDO DE SEGURIDAD: Estos productos fueron retirados del
- * cat√°logo activo (data/products.js) por no cumplir los criterios
- * de coherencia fotogr√°fica y comercial definidos para AUREA.
+ * cat·logo activo (data/products.js) por no cumplir los criterios
+ * de coherencia fotogr·fica y comercial definidos para AUREA.
  * 
- * Conservados aqu√≠ para poder recuperarlos si es necesario.
- * No se borr√≥ definitivamente la informaci√≥n original.
+ * Conservados aquÌ para poder recuperarlos si es necesario.
+ * No se borrÛ definitivamente la informaciÛn original.
  * ============================================================
  */
 
@@ -30,7 +30,7 @@ export const RETIRED_PRODUCTS = [
     ],
     popularity: 89,
     dateAdded: '2026-10-05',
-    retiredReason: 'Fotograf√≠a no disponible / pendiente de verificaci√≥n de correspondencia con el producto',
+    retiredReason: 'FotografÌa no disponible / pendiente de verificaciÛn de correspondencia con el producto',
     retiredDate: '2026-11-08',
   },
   {
@@ -41,7 +41,7 @@ export const RETIRED_PRODUCTS = [
     goldType: 'nacional',
     price: 240000,
     oldPrice: null,
-    description: 'Dise√±o colgante con silueta de l√°grima en oro estilizado y movimiento gr√°cil al andar, perfecto para eventos especiales.',
+    description: 'DiseÒo colgante con silueta de l·grima en oro estilizado y movimiento gr·cil al andar, perfecto para eventos especiales.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['elegante'],
@@ -51,18 +51,18 @@ export const RETIRED_PRODUCTS = [
     ],
     popularity: 80,
     dateAdded: '2026-10-15',
-    retiredReason: 'Fotograf√≠a no disponible / pendiente de verificaci√≥n de correspondencia con el producto',
+    retiredReason: 'FotografÌa no disponible / pendiente de verificaciÛn de correspondencia con el producto',
     retiredDate: '2026-11-08',
   },
   {
     id: 25,
-    name: 'Cam√°ndula Tradicional en Oro Nacional',
+    name: 'Cam·ndula Tradicional en Oro Nacional',
     category: 'joyeria',
     subcategory: null,
     goldType: 'nacional',
     price: 460000,
     oldPrice: null,
-    description: 'Pieza representativa de la devoci√≥n y orfebrer√≠a colombiana con eslabones finos, cuentas esf√©ricas y ca√≠da armoniosa.',
+    description: 'Pieza representativa de la devociÛn y orfebrerÌa colombiana con eslabones finos, cuentas esfÈricas y caÌda armoniosa.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['tradicion'],
@@ -72,7 +72,7 @@ export const RETIRED_PRODUCTS = [
     ],
     popularity: 88,
     dateAdded: '2026-10-06',
-    retiredReason: 'Fotograf√≠a no disponible / pendiente de verificaci√≥n de correspondencia con el producto',
+    retiredReason: 'FotografÌa no disponible / pendiente de verificaciÛn de correspondencia con el producto',
     retiredDate: '2026-11-08',
   },
   {
@@ -83,7 +83,7 @@ export const RETIRED_PRODUCTS = [
     goldType: 'nacional',
     price: 135000,
     oldPrice: null,
-    description: 'Tipograf√≠a cursiva elegante con acabado pulido para llevar la inicial personal o de un ser querido.',
+    description: 'TipografÌa cursiva elegante con acabado pulido para llevar la inicial personal o de un ser querido.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['personalizable'],
@@ -93,7 +93,7 @@ export const RETIRED_PRODUCTS = [
     ],
     popularity: 78,
     dateAdded: '2026-10-20',
-    retiredReason: 'Fotograf√≠a no disponible / pendiente de verificaci√≥n de correspondencia con el producto',
+    retiredReason: 'FotografÌa no disponible / pendiente de verificaciÛn de correspondencia con el producto',
     retiredDate: '2026-11-08',
   },
   {
@@ -104,30 +104,30 @@ export const RETIRED_PRODUCTS = [
     goldType: 'nacional',
     price: 230000,
     oldPrice: null,
-    description: 'Dise√±o en cascada de dos hebras finas de oro nacional con peque√±os colgantes de brillo din√°mico y broche reasa.',
+    description: 'DiseÒo en cascada de dos hebras finas de oro nacional con pequeÒos colgantes de brillo din·mico y broche reasa.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['nuevo'],
-    variants: ['23 cm + 3 cm extensi√≥n'],
+    variants: ['23 cm + 3 cm extensiÛn'],
     images: [
       'assets/images/products/prod-38-tobillera-doble-cadena-dijes.jpg',
     ],
     popularity: 74,
     dateAdded: '2026-10-14',
-    retiredReason: 'Fotograf√≠a no disponible / pendiente de verificaci√≥n de correspondencia con el producto',
+    retiredReason: 'FotografÌa no disponible / pendiente de verificaciÛn de correspondencia con el producto',
     retiredDate: '2026-11-08',
   },
 ];
 
   {
     id: 29,
-    name: 'Dije Cruz Cl√É¬°sica',
+    name: 'Dije Cruz Cl√°sica',
     category: 'dijes',
     subcategory: null,
     goldType: 'nacional',
     price: 140000,
     oldPrice: 160000,
-    description: 'Cruz tubular pulida de proporciones sobrias y dise√É¬±o atemporal para portar con cadenas delgadas o medianas.',
+    description: 'Cruz tubular pulida de proporciones sobrias y dise√±o atemporal para portar con cadenas delgadas o medianas.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['clasico'],
@@ -137,18 +137,18 @@ export const RETIRED_PRODUCTS = [
     ],
     popularity: 89,
     dateAdded: '2026-10-09',
-    retiredReason: 'Fotograf√≠a pendiente de verificaci√≥n por el propietario',
+    retiredReason: 'FotografÌa pendiente de verificaciÛn por el propietario',
     retiredDate: '2026-11-08',
   },
   {
     id: 31,
-    name: 'Dije Coraz√É¬≥n Pulido',
+    name: 'Dije Coraz√≥n Pulido',
     category: 'dijes',
     subcategory: null,
     goldType: 'nacional',
     price: 130000,
     oldPrice: 145000,
-    description: 'Silueta de coraz√É¬≥n abombado con pulido brillante que aporta luminosidad y un mensaje afectivo y rom√É¬°ntico.',
+    description: 'Silueta de coraz√≥n abombado con pulido brillante que aporta luminosidad y un mensaje afectivo y rom√°ntico.',
     material: 'Oro nacional, quilataje por confirmar',
     availability: 'En stock',
     tags: ['romantico'],
@@ -158,7 +158,7 @@ export const RETIRED_PRODUCTS = [
     ],
     popularity: 82,
     dateAdded: '2026-10-17',
-    retiredReason: 'Fotograf√≠a pendiente de verificaci√≥n por el propietario',
+    retiredReason: 'FotografÌa pendiente de verificaciÛn por el propietario',
     retiredDate: '2026-11-08',
   },
 ];
