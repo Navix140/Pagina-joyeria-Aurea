@@ -6,6 +6,7 @@
 
 import { CONFIG, formatPrice, getWhatsAppURL } from '../../data/config.js';
 import { getCart, getCartTotal, getCartCount, clearCart } from '../store.js';
+import { closeCart } from '../components/cart.js';
 import { showToast } from '../components/toast.js';
 
 function escapeHTML(str) {
@@ -15,6 +16,10 @@ function escapeHTML(str) {
 
 export function renderCheckoutView(container) {
   if (!container) return;
+
+  // Cerrar carrito lateral si está abierto al entrar al checkout,
+  // para que no quede tapando el formulario de entrega.
+  closeCart();
 
   const cart = getCart();
   const subtotal = getCartTotal();
@@ -172,16 +177,13 @@ export function renderCheckoutView(container) {
                 <span>Subtotal</span>
                 <span>${formatPrice(subtotal)}</span>
               </div>
-              <div class="checkout__summary-row" style="color: var(--gray-text); font-size: 0.85rem;">
-                <span>Envío</span>
-                <span style="color: var(--gray-dark);">Por confirmar</span>
-              </div>
-              <div style="font-size: 0.75rem; color: var(--gray-dark); margin: 4px 0 8px;">
-                El costo de envío se confirma al coordinar por WhatsApp.
+              <div class="checkout__summary-row">
+                <span>Envío nacional</span>
+                <span>${shippingFree ? '<strong class="cart-sidebar__free-shipping">¡Gratis!</strong>' : formatPrice(shipping)}</span>
               </div>
               <div class="checkout__summary-row checkout__summary-row--total">
                 <span>Total a Pagar</span>
-                <span style="color: var(--gray-dark);">Subtotal + envío (por confirmar)</span>
+                <span>${formatPrice(total)}</span>
               </div>
             </div>
 
