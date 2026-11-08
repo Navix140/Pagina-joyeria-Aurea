@@ -1,4 +1,4 @@
-?/**
+/**
  * ============================================================
  * AUREA — Joyería & Accesorios
  * Catálogo de Joyería Colombiana (Etapa 5)
