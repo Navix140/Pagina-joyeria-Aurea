@@ -82,7 +82,7 @@ export function renderFooter() {
             * Catálogo de referencia. Precios, materiales y disponibilidad sujetos a confirmación por WhatsApp.
           </p>
           <span class="footer__demo-notice">
-            Envío gratis nacional en compras superiores a $200.000 COP
+            Los costos y tiempos de envío se confirman al momento del pedido.
           </span>
         </div>
       </div>

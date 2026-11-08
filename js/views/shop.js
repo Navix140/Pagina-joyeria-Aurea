@@ -87,9 +87,18 @@ export function renderShopView(params = {}, container) {
         </div>
 
         <div class="shop__layout">
+          <!-- Botón de filtros móviles -->
+          <button class="shop__mobile-filter-btn" id="shop-mobile-filter-btn" aria-label="Filtros y Categorías" aria-expanded="false">
+            <span>Filtros</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-left:8px;"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          </button>
+
           <!-- Sidebar Filters -->
           <aside class="shop__sidebar">
             <div class="shop__filters" id="shop-filters-panel">
+              <button class="shop__filter-close" id="shop-filter-close" aria-label="Cerrar panel de filtros">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
               <div class="shop__filter-group">
                 <div class="shop__filter-title">
                   <span>Buscar en catálogo</span>
@@ -148,7 +157,7 @@ export function renderShopView(params = {}, container) {
                     />
                     <span>Todo tipo de oro</span>
                   </label>
-                  ${getAvailableGoldTypes().map(type => {
+                  ${[...getAvailableGoldTypes()].map(type => {
                     const label = type === 'nacional' ? 'Oro Nacional' : type === 'italiano' ? 'Oro Italiano' : type;
                     return `
                       <label class="shop__filter-option">
@@ -506,6 +515,55 @@ function bindShopEvents(container) {
   if (clearBtn) {
     clearBtn.addEventListener('click', clearAllFilters);
   }
+
+  // ── Mobile filters: open/close panel ──
+  const filterCloseBtn = document.getElementById('shop-filter-close');
+
+  function closeFiltersPanel() {
+    if (!filtersPanel || !mobileFilterBtn) return;
+    filtersPanel.classList.remove('shop__filters--open');
+    mobileFilterBtn.setAttribute('aria-expanded', 'false');
+    mobileFilterBtn.querySelector('span').textContent = 'Filtros';
+  }
+
+  if (mobileFilterBtn && filtersPanel) {
+    mobileFilterBtn.addEventListener('click', () => {
+      const isOpen = filtersPanel.classList.toggle('shop__filters--open');
+      mobileFilterBtn.setAttribute('aria-expanded', isOpen);
+      mobileFilterBtn.querySelector('span').textContent = isOpen ? 'Ocultar filtros' : 'Filtros';
+    });
+  }
+
+  if (filterCloseBtn && filtersPanel && mobileFilterBtn) {
+    filterCloseBtn.addEventListener('click', closeFiltersPanel);
+  }
+
+  // Cerrar panel al hacer clic fuera de él (sólo en móvil/tablet)
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth > 1024) return;
+    if (!filtersPanel || !mobileFilterBtn) return;
+    if (!filtersPanel.classList.contains('shop__filters--open')) return;
+    if (mobileFilterBtn.contains(e.target)) return;
+    if (filtersPanel.contains(e.target)) return;
+    closeFiltersPanel();
+  });
+
+  // Cerrar panel al cambiar de ruta (navegación)
+  window.addEventListener('hashchange', closeFiltersPanel);
+
+  // Cerrar panel al cambiar cualquier filtro en móvil/tablet (objetivo 5)
+  const closePanelOnMobile = () => {
+    if (window.innerWidth <= 1024 && filtersPanel && filtersPanel.classList.contains('shop__filters--open') && mobileFilterBtn) {
+      closeFiltersPanel();
+    }
+  };
+
+  const allRadios = document.querySelectorAll('input[name="shop-category"], input[name="shop-subcategory"], input[name="shop-goldtype"], input[name="shop-tag"]');
+  allRadios.forEach(radio => {
+    radio.addEventListener('change', closePanelOnMobile);
+  });
+
+  sortSelect.addEventListener('change', closePanelOnMobile);
 }
 
 function escapeHTML(str) {

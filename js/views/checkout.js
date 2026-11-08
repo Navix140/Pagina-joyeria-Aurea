@@ -175,11 +175,11 @@ export function renderCheckoutView(container) {
               </div>
               <div class="checkout__summary-row" style="color: var(--gray-text); font-size: 0.85rem;">
                 <span>Envío</span>
-                <span>${shippingFree ? '<strong style="color: var(--gold-dark);">¡Gratis!</strong>' : formatPrice(shipping)}</span>
+                <span>${shippingFree ? '<strong style="color: var(--gray-dark);">Sujeto a confirmación</strong>' : formatPrice(shipping)}</span>
               </div>
               ${!shippingFree ? `
-                <div style="font-size: 0.75rem; color: var(--gold-dark); margin: 4px 0 8px;">
-                  Envío gratis para compras superiores a ${formatPrice(CONFIG.FREE_SHIPPING_THRESHOLD)}
+                <div style="font-size: 0.75rem; color: var(--gray-dark); margin: 4px 0 8px;">
+                  Consulta costo de envío al momento del pedido
                 </div>
               ` : ''}
               <div class="checkout__summary-row checkout__summary-row--total">
@@ -191,11 +191,11 @@ export function renderCheckoutView(container) {
             <div class="checkout__guarantee" style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--gray-text);">
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <span>Garantía de satisfacción AUREA</span>
+                <span>Términos de compra sujetos a confirmación</span>
               </div>
               <div style="display: flex; align-items: center; gap: 8px;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                <span>Envíos rápidos y asegurados</span>
+                <span>Envíos coordinados por WhatsApp</span>
               </div>
             </div>
           </div>

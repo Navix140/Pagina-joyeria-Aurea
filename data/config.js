@@ -45,7 +45,7 @@ export const CONFIG = {
 
   /** Contacto — reemplazar con datos reales */
   CONTACT: {
-    email: 'contacto@aurea-joyeria.com',
+    email: 'Configurar email',
     phone: 'Configurar teléfono',
     address: 'Configurar dirección',
     city: 'Colombia',
